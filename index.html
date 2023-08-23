@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Tool Ratings</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="bg-yellow py-2 d-flex justify-content-between align-items-center">
+      <img src="/assets/pictures/rateit.png" alt="RateIt Logo" class="logo-img">
+      <button class="btn btn-login">Login</button>
+  </header>
+
+    <!-- Body -->
+    <main class="container mt-5">
+        <!-- Dropdown -->
+        <div class="d-flex justify-content-center mb-4">
+            <select class="custom-select w-auto" id="categoryDropdown">
+                <option selected>Choose the programming focus area you want to evaluate</option>
+                <option value="1">CSS Frameworks</option>
+            </select>
+            <!-- <button class="btn btn-submit ml-2">Submit</button> -->
+        </div>
+        <div style="height:100px"></div>
+
+      <div id="contentBelowDropdown">
+        <!-- Info Sentence -->
+        <p class="text-center mb-5">
+            We know you don't like to read so we have developed a quick reference guide to help you find the right solution for your development project. Choose from some popular focus areas below or find what you're looking for in the search bar.
+        </p>
+
+        <!-- Links -->
+        <div class="d-flex flex-wrap justify-content-between">
+            <a href="css-frameworks.html" class="mb-2">CSS Frameworks</a>
+            <!-- Placeholder links -->
+            <a href="#" class="mb-2">Future Category</a>
+            <a href="#" class="mb-2">Future Category</a>
+            <a href="#" class="mb-2">Future Category</a>
+            <a href="#" class="mb-2">Future Category</a>
+            <a href="#" class="mb-2">Future Category</a>
+            <a href="#" class="mb-2">Future Category</a>
+            <a href="#" class="mb-2">Future Category</a>
+            <a href="#" class="mb-2">Future Category</a>
+            <a href="#" class="mb-2">Future Category</a>
+            <a href="#" class="mb-2">Future Category</a>
+            <a href="#" class="mb-2">Future Category</a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-yellow py-2 d-flex justify-content-between align-items-center">
+        <div style="margin-left: 30px" class="text-grey">Copyright Info</div>
+        <div>
+            <a href="#" class="text-grey pr-2">About Us</a>
+            <a href="#" class="text-grey">Contact Us</a>
+        </div>
+    </footer>
+
+    <!-- Put in a javascript file -->
+    <script>
+      document.getElementById('categoryDropdown').addEventListener('change', function() {
+        let contentDiv = document.getElementById('contentBelowDropdown');
+        
+        // Check if the default option is selected
+        if (this.value === 'Choose the programming focus area you want to evaluate') {
+            contentDiv.style.display = 'block'; // Show original content
+        } else {
+            contentDiv.style.display = 'none';  // Hide the content
+        }
+      });
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https:// 
