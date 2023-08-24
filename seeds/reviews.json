@@ -1,0 +1,82 @@
+[
+    {
+      "rating": 5,
+      "text": "This framework is a true masterpiece! It revolutionized the way I design websites. The components are elegant and the documentation is crystal clear."
+    },
+    {
+      "rating": 4,
+      "text": "A solid framework that simplifies responsive design. The learning curve was manageable, and the grid system saved me hours of work."
+    },
+    {
+      "rating": 3,
+      "text": "Decent framework, but lacking in customization options. It's great for quick projects, but more advanced developers might find it limiting."
+    },
+    {
+      "rating": 2,
+      "text": "Disappointing experience. The styles clashed with my project's aesthetic, and the lack of support made troubleshooting a nightmare."
+    },
+    {
+      "rating": 4,
+      "text": "As a beginner, I appreciated the beginner-friendly documentation. However, the framework's lack of flexibility in terms of layout frustrated me."
+    },
+    {
+      "rating": 5,
+      "text": "This framework is a lifesaver for tight deadlines. The pre-designed elements cut down development time significantly. A must-have in my toolkit."
+    },
+    {
+      "rating": 3,
+      "text": "The framework's features are hit or miss. Some are incredibly useful, while others feel unnecessary and just add bloat."
+    },
+    {
+      "rating": 4,
+      "text": "The minimalist design approach is perfect for my taste. It's lightweight and efficient, but occasionally I wish it had a bit more built-in styling."
+    },
+    {
+      "rating": 1,
+      "text": "This framework was a disaster for me. The components didn't align well with my design goals, and the lack of updates is concerning."
+    },
+    {
+      "rating": 4,
+      "text": "A versatile framework that suits both beginners and experienced developers. The only drawback is the larger file size that impacts load times."
+    },
+    {
+      "rating": 2,
+      "text": "The initial learning curve was steep and the documentation lacked clarity. Once I got the hang of it, I appreciated the customization options."
+    },
+    {
+      "rating": 5,
+      "text": "I'm amazed by how well this framework integrates with other tools. The modularity and extensibility are superb."
+    },
+    {
+      "rating": 3,
+      "text": "The framework is stable and reliable, but the lack of innovation in terms of design and components is holding it back."
+    },
+    {
+      "rating": 4,
+      "text": "Excellent community support and regular updates. The framework has grown significantly and addresses many pain points of web development."
+    },
+    {
+      "rating": 1,
+      "text": "This framework feels outdated. It's not keeping up with modern design trends and the lack of responsiveness is a huge letdown."
+    },
+    {
+      "rating": 5,
+      "text": "The grid system's flexibility is a godsend. It adapts effortlessly to any design concept, making my projects truly unique."
+    },
+    {
+      "rating": 3,
+      "text": "This framework has some really great features, but it can be overwhelming to navigate due to the sheer number of options."
+    },
+    {
+      "rating": 4,
+      "text": "The theming capabilities allowed me to maintain brand consistency across multiple projects. However, the initial setup required some effort."
+    },
+    {
+      "rating": 2,
+      "text": "I struggled with compatibility issues on certain browsers. The framework's lack of cross-browser support was a significant drawback."
+    },
+    {
+      "rating": 5,
+      "text": "Simply fantastic! The modular structure enabled me to pick and choose what I needed without bogging down my projects."
+    }
+  ]  

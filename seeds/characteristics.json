@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Grid System",
+        "category_id": 1
+    },
+    {
+        "name": "Typography",
+        "category_id": 1
+    },
+    {
+        "name": "Components",
+        "category_id": 1
+    },
+    {
+        "name": "Customization",
+        "category_id": 1
+    },
+    {
+        "name": "Responsiveness",
+        "category_id": 1
+    },
+    {
+        "name": "Browser Compatibility",
+        "category_id": 1
+    },
+    {
+        "name": "Documentation",
+        "category_id": 1
+    },
+    {
+        "name": "Community and Support",
+        "category_id": 1
+    },
+    {
+        "name": "Performance",
+        "category_id": 1
+    },
+    {
+        "name": "Accessibility",
+        "category_id": 1
+    },
+    {
+        "name": "Ease of Use",
+        "category_id": 1
+    },
+    {
+        "name": "Theming",
+        "category_id": 1
+    }
+]
