@@ -38,16 +38,24 @@ async function init() {
     
     // create random review characteristics
     const reviewCharacteristics = [];
-    for (const review of reviews) {
-        reviewCharacteristics.push({
-            rating: randInt(5),
-            review_id: randInt(reviews.length),
-            characteristic_id: randInt(characteristics.length)
-        });
+    for (let r_id = 1; r_id <= reviews.length; r_id++) {
+        for (let c_id = 1; c_id <= characteristics.length; c_id++) {
+            // random chance to review a characteristic
+            if (randInt(2) < 2) continue;
+
+            reviewCharacteristics.push({
+                rating: randInt(5),
+                review_id: r_id,
+                characteristic_id: c_id
+            });
+        }
     }
     await ReviewCharacteristics.bulkCreate(reviewCharacteristics, { returning: true, individualHooks: true });
 
-    console.log(await Users.findAll({raw: true}));
+    console.log(await Reviews.findAll({
+        include: ReviewCharacteristics,
+        raw: true
+    }));
 
     sequelize.close();
 }
