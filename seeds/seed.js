@@ -52,11 +52,6 @@ async function init() {
     }
     await ReviewCharacteristics.bulkCreate(reviewCharacteristics, { returning: true, individualHooks: true });
 
-    console.log(await Reviews.findAll({
-        include: ReviewCharacteristics,
-        raw: true
-    }));
-
     sequelize.close();
 }
 
