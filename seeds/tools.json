@@ -1,0 +1,74 @@
+[
+    {
+        "name": "Bootstrap",
+        "category_id": 1
+    },
+    {
+        "name": "Materialize",
+        "category_id": 1
+    },
+    {
+        "name": "Foundation",
+        "category_id": 1
+    },
+    {
+        "name": "Bulma",
+        "category_id": 1
+    },
+    {
+        "name": "Semantic UI",
+        "category_id": 1
+    },
+    {
+        "name": "Tailwind CSS",
+        "category_id": 1
+    },
+    {
+        "name": "UIKit",
+        "category_id": 1
+    },
+    {
+        "name": "Pure.css",
+        "category_id": 1
+    },
+    {
+        "name": "Skeleton",
+        "category_id": 1
+    },
+    {
+        "name": "Ant Design",
+        "category_id": 1
+    },
+    {
+        "name": "Milligram",
+        "category_id": 1
+    },
+    {
+        "name": "Grommet",
+        "category_id": 1
+    },
+    {
+        "name": "Quasar",
+        "category_id": 1
+    },
+    {
+        "name": "Carbon Design System",
+        "category_id": 1
+    },
+    {
+        "name": "Gestalt",
+        "category_id": 1
+    },
+    {
+        "name": "Tachyons",
+        "category_id": 1
+    },
+    {
+        "name": "Spectre.css",
+        "category_id": 1
+    },
+    {
+        "name": "Picnic CSS",
+        "category_id": 1
+    }
+]

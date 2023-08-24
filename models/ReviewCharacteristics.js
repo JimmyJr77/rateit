@@ -25,7 +25,7 @@ ReviewCharacteristics.init(
         key: "id",
       },
     },
-    characterstic_id: {
+    characteristic_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {

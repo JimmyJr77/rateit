@@ -1,0 +1,42 @@
+[
+    {
+      "name": "user123",
+      "password": "password123"
+    },
+    {
+      "name": "john_doe",
+      "password": "joemcdoe"
+    },
+    {
+      "name": "sunny85",
+      "password": "moony158"
+    },
+    {
+      "name": "webmaster",
+      "password": "bookpros"
+    },
+    {
+      "name": "coding_ninja",
+      "password": "nighttime"
+    },
+    {
+      "name": "lisa123",
+      "password": "yoyomama"
+    },
+    {
+      "name": "dev_guru",
+      "password": "bestofthebest"
+    },
+    {
+      "name": "tech_wizard",
+      "password": "harrypotter"
+    },
+    {
+      "name": "alice2023",
+      "password": "a1b2c3d4"
+    },
+    {
+      "name": "user456",
+      "password": "password456"
+    }
+  ]  
