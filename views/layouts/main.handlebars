@@ -14,6 +14,13 @@
     <header class="bg-yellow py-2 d-flex justify-content-between align-items-center">
       <img src="/assets/images/rateit.png" alt="RateIt Logo" class="logo-img">
       <button class="btn btn-login">Login</button>
+           <!-- Conditionally render login or logout links -->
+        {{#if logged_in}}
+        <a href="/profile">profile</a> |
+        <button class="no-button" id="logout">logout</button>
+        {{else}}
+        <a href="/login">login</a>
+        {{/if}}
   </header>
 
     <!-- Body -->
