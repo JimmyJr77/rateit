@@ -1,10 +1,10 @@
 const router = require("express").Router();
-//const path = require('path');
 const { Tools } = require("../../models");
 
-router.post("/api/tools", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
-    const toolData = await Tools.create(req.body);
+    const { name, category_id } = req.body;
+    const toolData = await Tools.create({ name, category_id });
     res.status(200).json(toolData);
   } catch (err) {
     res.status(500).json({ message: "Tool failed to create." });
@@ -12,4 +12,3 @@ router.post("/api/tools", async (req, res) => {
 });
 
 module.exports = router;
-//added this to test
