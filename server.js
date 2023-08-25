@@ -1,9 +1,12 @@
+require('dotenv').config();
+
 const path = require('path');
 const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
-const helpers = require('./utils/helpers');
+const helpers = require('./utils/helpers.js');
+const bcrypt = require('bcrypt');
 
 const sequelize = require('./config/connection');
 
@@ -17,7 +20,7 @@ const hbs = exphbs.create({ helpers });
 
 // Configured and linked session object with the sequelize store
 const sess = {
-  secret: 'Super secret secret',
+  secret: bcrypt.hashSync(process.env.SESSION_SECRET, 10),
   cookie: {},
   resave: false,
   saveUninitialized: true,
