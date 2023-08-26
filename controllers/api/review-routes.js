@@ -1,11 +1,15 @@
 const router = require("express").Router();
-//const path = require('path');
 const { Reviews, ReviewCharacteristics } = require("../../models");
 
-router.post("/api/reviews", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
-    // const { rating, text, characteristics = [] } = req.body;
     const { rating, text, characteristics } = req.body;
+
+    if (!rating) {
+      res.status(400).json({ message: "No rating provided!" });
+      return;
+    }
+
     const reviewData = await Reviews.create({
       rating,
       text,
