@@ -1,34 +1,32 @@
 body {
-    background-color: white;
+  background-color: rgb(255, 255, 255);
 }
 
 .bg-yellow {
-    background-color: #ffee90; /* dull yellow */
+  background-color: #ffee90; /* dull yellow */
 }
 
 header {
-    height: 85px;
+  height: 85px;
 }
 
 .logo-img {
-    max-height: 100px;  /* Example height; adjust as needed */
-    width: auto;       /* Maintain aspect ratio */
-    margin-left: 30px;
-    margin-top: 24px;
-    
+  max-height: 100px; /* Example height; adjust as needed */
+  width: auto; /* Maintain aspect ratio */
+  margin-left: 30px;
+  margin-top: 24px;
 }
 
-
 .logo-placeholder {
-    padding-left: 30px;
+  padding-left: 30px;
 }
 
 .btn-login {
-    background-color: #63b5fd; /* light blue */
-    color: white;
-    font-weight: bold;
-    border: none;
-    margin-right: 30px;
+  background-color: #63b5fd; /* light blue */
+  color: white;
+  font-weight: bold;
+  border: none;
+  margin-right: 30px;
 }
 
 /* .btn-submit {
@@ -38,37 +36,60 @@ header {
 } */
 
 .text-grey {
-    color: #6c757d; /* dark grey */
+  color: #6c757d; /* dark grey */
 }
 
 a.text-grey:hover {
-    text-decoration: none;
-    color: #6c757d; /* dark grey */
+  text-decoration: none;
+  color: #6c757d; /* dark grey */
 }
 
 a {
-    color: #007bff; /* bootstrap primary color */
-    cursor: pointer;
-    margin: 0 30px; /* giving links a bit of margin */
+  color: #007bff; /* bootstrap primary color */
+  cursor: pointer;
+  margin: 0 30px; /* giving links a bit of margin */
 }
 
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+  height: 100%;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 main.container {
-    flex: 1 0 auto; /* this ensures that the main content expands */
+  flex: 1 0 auto; /* this ensures that the main content expands */
 }
 
 footer {
-    flex-shrink: 0; /* this ensures that the footer does not shrink */
+  flex-shrink: 0; /* this ensures that the footer does not shrink */
+}
+
+.rating {
+  font-size: 0;
+}
+
+.star {
+  display: inline-block;
+  margin: 10px;
+  width: 60px;
+  height: 60px;
+  background-image: url("/public/images/empty-star.png"); /* Replace with your star image */
+  background-size: cover;
+  cursor: pointer;
+}
+
+.star.full {
+  background-image: url("/public/images/full-star.png");
+}
+
+.star.half {
+  background-image: url("/public/images/half-star.png");
 }
