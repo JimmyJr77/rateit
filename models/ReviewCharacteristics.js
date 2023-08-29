@@ -33,6 +33,14 @@ ReviewCharacteristics.init(
         key: "id",
       },
     },
+    tool_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: "tools",
+        key: "id",
+      },
+    },
   },
   {
     sequelize,
