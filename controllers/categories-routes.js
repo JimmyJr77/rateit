@@ -25,7 +25,7 @@ router.get('/:id', async (req, res) => {
         {
           model: ReviewCharacteristics,
           attributes: [
-            [sequelize.fn('AVG', sequelize.col('reviewCharacteristics.rating')), 'rating_avg']
+            [sequelize.fn('AVG', sequelize.col('reviewCharacteristics.rating')), 'overall_rating']
           ],
           group: 'reviewCharacteristics.tool_id',
         },
@@ -38,6 +38,7 @@ router.get('/:id', async (req, res) => {
       attributes: {
         exclude: ['categoryId']
       },
+      
       include: {
         model: Reviews,
         attributes: {
@@ -50,14 +51,36 @@ router.get('/:id', async (req, res) => {
           }
         }
       }
+    });
+
+    const reviewCharacteristics = await Tools.findAll({
+      include: {
+        model: ReviewCharacteristics,
+        attributes: [
+          'tool_id',
+          'characteristic_id',
+          // [sequelize.fn('AVG', sequelize.col('rating')), 'avg']
+        ],
+        include: {
+          model: Characteristics,
+          attributes: {
+            exclude: ['categoryId']
+          }
+        }
+        // group: ['tools.id', 'reviewCharacteristics.characteristic_id']
+      },
+      raw: true,
+      // group: 'id'
     })
+
+    tools.forEach(tool => tool.reviews = reviews.find(r => r.id === tool.id).reviews);
 
     if (!tools) {
       return res.status(404).json({ message: 'Category not found' });
     }
   
     // const categoryData = category.get({ plain: true });
-    res.json(reviews);
+    res.json(tools);
     // res.render('category', { category: categoryData });
   } 
   catch (err) {
