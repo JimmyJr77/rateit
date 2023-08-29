@@ -1,3 +1,18 @@
+/* COLORS */
+
+
+.bg-light-blue {
+    background-color: #63b5fd; 
+}
+
+.bg-grey {
+    background-color: #e4e4e4;
+}
+
+.border-dark-grey {
+    border:#757c83 solid 1px;
+}
+
 body {
     background-color: white;
 }
@@ -83,35 +98,16 @@ main.container {
 
 /* FOOTER INFORMATION */
 
-footer {
+/* footer {
     flex-shrink: 0; 
-}
+} */
 
 .footer-left {
     margin-left: 30px;
 }
 
 
-/* BACKGROUND COLORS */
-
-
-.bg-light-blue {
-    background-color: #63b5fd; 
-}
-
-.bg-lighter-blue {
-    background-color: #c7e5ff; 
-}
-
-.bg-grey {
-    background-color: #e4e4e4;
-}
-
-.border-dark-grey {
-    border:#757c83 solid 1px;
-}
-
-/* BLUE TEXT BOX HEADERS */
+/* BLUE TOOL BOX HEADERS */
 
 .headers {
     font-weight: bold;
