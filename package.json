@@ -27,6 +27,8 @@
     "express-handlebars": "^7.1.2",
     "express-session": "^1.17.3",
     "mysql2": "^3.6.0",
+    "random-password": "^0.1.2",
+    "random-username-gen": "^2.0.2",
     "sequelize": "^6.32.1"
   },
   "devDependencies": {

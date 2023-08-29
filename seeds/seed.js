@@ -3,6 +3,7 @@ const path = require('path');
 
 const sequelize = require('../config/connection.js');
 const { Users, Categories, Tools, Characteristics, Reviews, ReviewCharacteristics } = require('../models');
+const randomUsers = require('./randomUsers.js');
 
 // get data from given file and seed a given model with the data
 async function seedData(filePath, model, fn) {
@@ -21,10 +22,19 @@ function randInt(max) {
     return Math.floor(Math.random() * max) + 1;
 }
 
+async function seedUsers(amount=1) {
+    const users = randomUsers(amount);
+    await Users.bulkCreate(randomUsers(amount), { returning: true, individualHooks: true });
+    return users;
+}
+
 async function init() {
     await sequelize.sync({ force: true });
 
-    const users = await seedData('users.json', Users);
+    const users = await seedUsers(50);
+    const u = await Users.findAll({raw: true})
+    console.log(u);
+    // const users = await seedData('users.json', Users);
     const categories = await seedData('categories.json', Categories);
     const tools = await seedData('tools.json', Tools);
     const characteristics = await seedData('characteristics.json', Characteristics);
@@ -46,7 +56,8 @@ async function init() {
             reviewCharacteristics.push({
                 rating: randInt(5),
                 review_id: r_id,
-                characteristic_id: c_id
+                characteristic_id: c_id,
+                tool_id: reviews[r_id - 1]["tool_id"]
             });
         }
     }
