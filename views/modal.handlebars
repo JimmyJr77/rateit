@@ -1,0 +1,105 @@
+<!-- HEADER -->
+    <header class="bg-yellow py-2 d-flex justify-content-between align-items-center">
+        <img src="/public/images/rateit.png" alt="RateIt Logo" class="logo-img">
+        <button class="btn btn-login">Login</button>
+    </header>
+
+<!-- MAIN BODY -->
+    <main class="container mt-5">
+<!-- MODAL -->
+        <div class="text-center">
+            <h3>Choose Desired Characteristics to Review</h3>
+            <p>Check box and set min value to show all<br>
+            Use slider to filter for minimum characteristic standards<br>
+            Uncheck box to remove characteristic from review</p>
+            <hr>
+        </div>
+        <section>
+            <div id="filter-strip" class="d-flex align-items-center justify-content-center">
+                <div style="width:250px" class="text-right" >
+                    <span id="characteristic" class="font-weight-bold">Characteristics of the Tool</span>
+                </div>
+                <div>
+                    <div class="custom-control custom-checkbox ml-2">
+                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                        <label class="custom-control-label" for="customCheck1"></label>
+                    </div>
+                                </div>
+                <div class="col-4">
+                    <div id="slider-range-max"></div>
+                </div>
+                <div>
+                    <div class="d-flex align-items-center col-.5">
+                        <input type="text" id="characteristic1" readonly style="border:0; width:30px; color:blue; font-weight:bold;">
+                    </div>
+                </div>
+            </div>
+        </section>
+           
+
+
+    </main>
+
+<!-- FOOTER -->
+    <footer class="bg-yellow py-2 d-flex justify-content-between align-items-center">
+        <div class="text-grey footer-left">Copyright Info</div>
+        <div>
+            <a href="#" class="text-grey pr-2">About Us</a>
+            <a href="#" class="text-grey">Contact Us</a>
+        </div>
+    </footer>
+
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <!-- JQUERY UI -->
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <!-- BOOTSTRAP JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        $( function() {
+            $( "#slider-range-max" ).slider({
+            range: "max",
+            min: 0,
+            max: 10,
+            value: 4,
+            slide: function( event, ui ) {
+                $( "#characteristic1" ).val( ui.value );
+            }
+        });
+            $( "#characteristic1" ).val( $( "#slider-range-max" ).slider( "value" ) );
+        });
+
+        $(function() {
+            var $slider = $("#slider-range-max");
+            var $checkbox = $("#customCheck1");
+            var $charInput = $("#characteristic1");
+
+            $slider.slider({
+                range: "max",
+                min: 0,
+                max: 10,
+                value: 0, // Set initial value to 0
+                slide: function(event, ui) {
+                    $charInput.val(ui.value);
+                }
+            });
+
+            // Gray out and disable the slider by default
+            $slider.addClass('slider-disabled').slider("disable");
+            $charInput.val(""); // Sets the text input to an empty string
+
+            // Add checkbox event listener
+            $checkbox.on("change", function() {
+                if ($checkbox.prop("checked")) {
+                    $slider.removeClass('slider-disabled').slider("enable");
+                    $slider.slider("value", 0); // Sets the slider value to 0 when checked
+                    $charInput.val(0); // Updates the text input value
+                } else {
+                    $slider.addClass('slider-disabled').slider("disable");
+                    $charInput.val(""); // Empties the text input value
+                }
+            });
+        });
+
+    </script>
