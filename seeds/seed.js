@@ -32,8 +32,6 @@ async function init() {
     await sequelize.sync({ force: true });
 
     const users = await seedUsers(50);
-    const u = await Users.findAll({raw: true})
-    console.log(u);
     // const users = await seedData('users.json', Users);
     const categories = await seedData('categories.json', Categories);
     const tools = await seedData('tools.json', Tools);
