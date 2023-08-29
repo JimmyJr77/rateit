@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(255, 255, 255);
+  background-color: white;
 }
 
 .bg-yellow {
@@ -15,6 +15,10 @@ header {
   width: auto;
   margin-left: 30px;
   margin-top: 24px;
+  max-height: 100px;
+  width: auto;
+  margin-left: 30px;
+  margin-top: 24px;
 }
 
 .logo-placeholder {
@@ -24,6 +28,11 @@ header {
 /* BUTTONS */
 
 .btn-login {
+  background-color: #63b5fd;
+  color: white;
+  font-weight: bold;
+  border: none;
+  margin-right: 30px;
   background-color: #63b5fd; /* light blue */
   color: white;
   font-weight: bold;
@@ -31,6 +40,20 @@ header {
   margin-right: 30px;
 }
 
+.btn-filter {
+  background-color: #63b5fd;
+  color: white;
+  font-weight: bold;
+  border: none;
+  margin-left: -15px;
+}
+
+.btn-rate {
+  color: #ffee90;
+  font-weight: bold;
+  border: none;
+  height: 35px;
+  margin-left: -10px;
 /* .btn-submit {
     background-color: #63b5fd;
     border: none;
@@ -40,13 +63,10 @@ header {
 
 /* OTHER */
 .text-grey {
-  color: #6c757d; /* dark grey */
   color: #6c757d;
 }
 
 a.text-grey:hover {
-  text-decoration: none;
-  color: #6c757d; /* dark grey */
   text-decoration: none;
   color: #6c757d;
 }
@@ -75,6 +95,86 @@ main.container {
   flex: 1 0 auto;
 }
 
+/* FOOTER INFORMATION */
+
 footer {
-  flex-shrink: 0; /* this ensures that the footer does not shrink */
+  flex-shrink: 0;
 }
+
+.footer-left {
+  margin-left: 30px;
+}
+
+/* BACKGROUND COLORS */
+
+.bg-light-blue {
+  background-color: #63b5fd;
+}
+
+.bg-lighter-blue {
+  background-color: #c7e5ff;
+}
+
+.bg-grey {
+  background-color: #e4e4e4;
+}
+
+.border-dark-grey {
+  border: #757c83 solid 1px;
+}
+
+/* BLUE TEXT BOX HEADERS */
+
+.headers {
+  font-weight: bold;
+}
+
+.vertical-text {
+  transform: rotate(270deg);
+  white-space: nowrap;
+  margin-bottom: 40px;
+}
+
+/* BLUE TOOL BOX CONTENT */
+
+#tool-boxes h3 {
+  color: white;
+  margin-top: 10px;
+}
+
+.rating {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.star-rating {
+  font-size: 2em;
+  color: #ffee90;
+}
+
+/* COMMENT BOXES */
+
+.d-none {
+  display: none;
+}
+
+/* RESIZING OPTIONS */
+
+@media (max-width: 768px) {
+  .box-tool-rating-section {
+    order: -1;
+    width: 100%;
+    text-align: center;
+  }
+  .star-rating {
+    font-size: 1.5em;
+    color: #ffee90;
+  }
+}
+
+/* TURN MARK-DOWN ON AND OFF TO TOGGLE OUTLINES */
+
+/* .tool-box-outline {
+  border: 1px solid black;
+  height:100%;
+} */
