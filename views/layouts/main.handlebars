@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Tool Ratings</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/public/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  {{{ body }}}
+</body>
+
+    <!-- PUT IN A JAVASCRIPT FILE LATER -->
+    <script>
+      document.getElementById('categoryDropdown').addEventListener('change', function() {
+        let contentDiv = document.getElementById('contentBelowDropdown');
+        
+        // Check if the default option is selected
+        if (this.value === 'Choose the programming focus area you want to evaluate') {
+            contentDiv.style.display = 'block'; // Show original content
+        } else {
+            contentDiv.style.display = 'none';  // Hide the content
+        }
+      });
+    </script>
+
+    <!-- JQUERY & BOOTSTRAP JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+</html>
