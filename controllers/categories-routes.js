@@ -1,12 +1,14 @@
 const router = require('express').Router();
 //const path = require('path');
 const { Categories, Tools, Characteristics, Reviews, ReviewCharacteristics } = require('../models');
+const sequelize = require("sequelize");
 
 //route to get one category
-router.get('/category/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
           const categoryId = req.params.id;
 // Fetch category and associated tools with characteristics and reviews
+console.log('Fetching category data...');
           const category = await Categories.findByPk(categoryId, {
               include: [
                   {
@@ -17,7 +19,7 @@ router.get('/category/:id', async (req, res) => {
                             model: ReviewCharacteristics,
                             attributes: [
                               [sequelize.fn('AVG', sequelize.col('rating')), 'overallCharacteristics_rating'], // Calculate average rating
-                            ]
+                            ], required: true,
                             //   model: Reviews,
                             //   attributes: [
                             //     [sequelize.fn('AVG', sequelize.col('rating')), 'overall_rating'], // Calculate average rating
@@ -40,7 +42,7 @@ router.get('/category/:id', async (req, res) => {
                               model: ReviewCharacteristics,
                               attributes: [
                                   [sequelize.fn('AVG', sequelize.col('rating')), 'averageCharaceristics_rating'],
-                              ],
+                              ], required: true,
                     },
                 ],
                 group: ['Characteristics.id'], // Group by Characteristics id to calculate average per characteristic
@@ -48,10 +50,12 @@ router.get('/category/:id', async (req, res) => {
             ],
             });
             if (!category) {
+              console.log('Category not found.');
               return res.status(404).json({ message: 'Category not found' });
           }
   
           const categoryData = category.get({ plain: true });
+          console.log('Rendering category data:', categoryData);
           res.render('category', { category: categoryData });
       } catch (err) {
           console.error(err);
@@ -61,8 +65,7 @@ router.get('/category/:id', async (req, res) => {
 
   module.exports = router;
 
-each category- Tools
-each tool- multiple Reviews (ratings)
+
 // router.get('/category/:id', async (req, res) => {
 //     try {
 //         const oneCategory = await Categories.findByPk(req.params.id, {
