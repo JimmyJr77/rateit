@@ -2,6 +2,7 @@ const router = require('express').Router();
 //const path = require('path');
 const { Users, Categories, Tools, Characteristics, Reviews, ReviewCharacteristics } = require('../models');
 const sequelize = require('../config/connection.JS');
+const sequelize = require('../config/connection.js');
 
 //route to get one category
 router.get('/:id', async (req, res) => {
