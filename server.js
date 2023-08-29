@@ -32,8 +32,6 @@ const sess = {
 //express-session and stored as Express.js middleware
 app.use(session(sess));
 
-
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -44,16 +42,17 @@ sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
 // Runs handlebars
-app.engine('handlebars', expbs({ defaultLayout: 'main' }));
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
+
 // Handlebar routing
-app.get('/', (req, res) => {
-    res.render('index');
-});
-app.get('/modal', (req, res) => {
-  res.render('modal');
-});
-app.get('/ratings', (req, res) => {
-  res.render('ratings');
-});
+// app.get('/', (req, res) => {
+//     res.render('index');
+// });
+// app.get('/modal', (req, res) => {
+//   res.render('modal');
+// });
+// app.get('/ratings', (req, res) => {
+//   res.render('ratings');
+// });
 
