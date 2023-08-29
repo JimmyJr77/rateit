@@ -21,6 +21,10 @@ body {
   background-color: #ffee90; /* dull yellow */
 }
 
+yellow {
+  color: #ffee90;
+}
+
 header {
   height: 85px;
 }
@@ -177,10 +181,3 @@ footer {
     color: #ffee90;
   }
 }
-
-/* TURN MARK-DOWN ON AND OFF TO TOGGLE OUTLINES */
-
-/* .tool-box-outline {
-  border: 1px solid black;
-  height:100%;
-} */

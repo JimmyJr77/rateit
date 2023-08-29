@@ -1,0 +1,64 @@
+    <!-- TOOL HEADER SECTION -->
+    <secion>
+        <section>
+            <div class="container-fluid my-2">
+                <div class="d-flex align-items-end">
+                        <div class="d-flex d-flex align-end">
+                            <button type="button" class="btn btn-filter" data-toggle="modal" data-target="#filterModal">Filter</button>
+                        </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- TOOL BOXES SECTION -->
+    {{#each this}} <!-- Loop through each tool in the array -->
+        <section id="tool-boxes">
+            <div class="container-fluid mt-2 py-2 bg-light-blue" onclick="toggleDropdown(this)">
+                <div class="d-flex align-items-center ">
+                    <div style="width:80%;">
+                        <div class="d-flex justify-content-between align-items-center ">
+                            <div class="d-flex align-items-center">
+                                <button type="button" class="btn btn-rate" data-toggle="modal" data-target="#filterModal">rate</button>
+                                <div>
+                                    <h3 id="tool-name" class="tool-name font-weight-bold" style="color:white">{{name}}</h3>
+                                </div>
+                            </div>
+                            <div id="overall-rating-stars" class="star-rating ">
+                                <!-- renderStars() can be called using JavaScript and updating this div -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" align-items-center mr-2" style="width:20%;">
+                        <div id="topChar1" class="text-right " style="color:#ffee90";>characteristic 1</div>
+                        <div id="topChar2" class="text-right" style="color: #ffee90";>characteristic 2</div>
+                        <div id="topChar3" class="text-right" style="color: #ffee90";>characteristic 3</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TOOL BOX DROP DOWN -->
+        {{#each Characteristics}}
+            <div class="comments-dropdown bg-grey p-3 d-none">
+                <div class="row justify-content-start ml-1">
+                    <div class="col-4 align self start p-3 m-3>
+                        <span id="characteristicName">{{Characteristics.name}}</span>
+                        <span id="characteristicRating">{{reviewCharacteristics.rating}}</span></div>
+        {{/each}}
+
+                <!-- Loop through each review for the current tool -->
+                {{#each Reviews}}
+                    <div class="bg-white rounded p-2 m-2 border-dark-grey">
+                        <span class="likes-count">120</span> <!-- Replace with actual likes count when we have it -->
+                        <span class="star-outline ml-2" onclick="toggleStar(this)" data-id="comment1">&#9734;</span>
+                        <span class="username ml-2 font-weight-bold" id="user-name">{{user.name}}</span>
+                        <span class="comment-text ml-2" id="comment-text">{{reviews.text}}</span>
+                    </div>
+                {{/each}}
+                <!-- See More Comments Link -->
+                <div class="text-center">
+                    <a href="#">See all reviews</a>
+                </div>
+            </div>
+        </section>
+    {{/each}}
+    </section>   

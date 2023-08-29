@@ -1,21 +1,34 @@
+    <!-- TOOL HEADER SECTION -->
+    <secion>
+        <section>
+            <div class="d-flex col container-fluid my-2">
+                <div class="d-flex align-items-end">
+                        <div class="d-flex d-flex align-end">
+                            <button type="button" class="btn btn-filter" data-toggle="modal" data-target="#filterModal">Filter</button>
+                        </div>
+                </div>
+                <div class="d-flex col text-right"> 
+                </div>
+            </div>
+        </section>
+
     <!-- TOOL BOXES SECTION-->
         <section id="tool-boxes">
             <div class="container-fluid mt-2 py-2 bg-light-blue" onclick="toggleDropdown(this)">
-                <div class="d-flex align-items-center tool-box-outline">
-                    <div class="tool-box-outline" style="width:70%;">
-                        <div class="d-flex justify-content-between align-items-center tool-box-outline">
+                <div class="d-flex align-items-center ">
+                    <div style="width:80%;">
+                        <div class="d-flex justify-content-between align-items-center ">
                             <div class="d-flex align-items-center">
                                 <button type="button" class="btn btn-rate" data-toggle="modal" data-target="#filterModal">rate</button>
-                                <div class="tool-box-outline"><h3 id="tool-name" class="tool-name font-weight-bold" style="color:white">Tool Name Tool Name Tool Name</h3></div>
+                                <div><h3 id="tool-name" class="tool-name font-weight-bold" style="color:white">A Really Long Tool Name</h3></div>
                             </div>
-                            
-                            <div id="overall-rating-stars" class="star-rating tool-box-outline">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+                            <div id="overall-rating-stars" class="star-rating"></div>
                         </div>
                     </div>
-                    <div class="tool-box-outline d-flex justify-content-between align-items-center" style="width:30%;">
-                        <div id="charOneRating" class="tool-box-outline rating text-center" style="width:33%;">7</div>
-                        <div id="charTwoRating" class="tool-box-outline rating text-center" style="width:33%;">8</div>
-                        <div id="charThreeRating" class="tool-box-outline rating text-center" style="width:33%;">9</div>   
+                    <div class=" align-items-center mr-2" style="width:20%;">
+                        <div id="topChar1" class="text-right " style="color:#ffee90";>characteristic 1</div>
+                        <div id="topChar2" class="text-right" style="color: #ffee90";>characteristic 2</div>
+                        <div id="topChar3" class="text-right" style="color: #ffee90";>characteristic 3</div>
                     </div>
                 </div>
             </div>
@@ -23,24 +36,18 @@
             <!-- TOOL BOX DROP DOWN -->
             <div class="comments-dropdown bg-grey p-3 d-none">
                 <div class="row justify-content-start ml-1">
-                    <div class="col-4 align self start p-3 m-3><span id="characteristicName">Characteristic name: </span><span id="characteristicRating">#</span></div>
-                    <div class="col-4 align self start p-3 m-3><span id="characteristicName">Characteristic name: </span><span id="characteristicRating">#</span></div>
-                    <div class="col-4 align self start p-3 m-3><span id="characteristicName">Characteristic name: </span><span id="characteristicRating">#</span></div>
-                    <div class="col-4 align self start p-3 m-3><span id="characteristicName">Characteristic name: </span><span id="characteristicRating">#</span></div>
-                    <div class="col-4 align self start p-3 m-3><span id="characteristicName">Characteristic name: </span><span id="characteristicRating">#</span></div>
-                    <div class="col-4 align self start p-3 m-3><span id="characteristicName">Characteristic name: </span><span id="characteristicRating">#</span></div>
-                    <div class="col-4 align self start p-3 m-3><span id="characteristicName">Characteristic name: </span><span id="characteristicRating">#</span></div>
-                    <div class="col-4 align self start p-3 m-3><span id="characteristicName">Characteristic name: </span><span id="characteristicRating">#</span></div>
-                    <div class="col-4 align self start p-3 m-3><span id="characteristicName">Characteristic name: </span><span id="characteristicRating">#</span></div>
-                    <div class="col-4 align self start p-3 m-3><span id="characteristicName">Characteristic name: </span><span id="characteristicRating">#</span></div>
+                    <div class="col-4 align self start p-3 m-3>
+                        <span id="characteristicName">Characteristic name: </span>
+                        <span id="characteristicRating">#</span></div>
+                    
 
                 </div>
                 <!-- Next Comment -->
                 <div class="bg-white rounded p-2 m-2 border-dark-grey">
                     <span class="likes-count">120</span>
                     <span class="star-outline ml-2" onclick="toggleStar(this)" data-id="comment1">&#9734;</span>
-                    <span class="username ml-2 font-weight-bold">johndoe (52):</span>
-                    <span class="comment-text ml-2">Great framework!</span>
+                    <span class="username ml-2 font-weight-bold" id="user-name">johndoe (52):</span>
+                    <span class="comment-text ml-2" id="comment-text">Great framework!</span>
                 </div>
                 <!-- Next Comment -->
                 <div class="bg-white rounded p-2 m-2 border-dark-grey">
@@ -62,4 +69,4 @@
                 </div>
             </div>
         </section>
-
+    </section>   
