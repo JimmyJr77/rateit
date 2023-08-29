@@ -11,8 +11,8 @@ header {
 }
 
 .logo-img {
-  max-height: 100px; /* Example height; adjust as needed */
-  width: auto; /* Maintain aspect ratio */
+  max-height: 100px;
+  width: auto;
   margin-left: 30px;
   margin-top: 24px;
 }
@@ -20,6 +20,8 @@ header {
 .logo-placeholder {
   padding-left: 30px;
 }
+
+/* BUTTONS */
 
 .btn-login {
   background-color: #63b5fd; /* light blue */
@@ -32,22 +34,27 @@ header {
 /* .btn-submit {
     background-color: #63b5fd;
     border: none;
-    color: white;
-} */
+    height: 35px;
+    margin-left: -10px;
+}
 
+/* OTHER */
 .text-grey {
   color: #6c757d; /* dark grey */
+  color: #6c757d;
 }
 
 a.text-grey:hover {
   text-decoration: none;
   color: #6c757d; /* dark grey */
+  text-decoration: none;
+  color: #6c757d;
 }
 
 a {
-  color: #007bff; /* bootstrap primary color */
+  color: #007bff;
   cursor: pointer;
-  margin: 0 30px; /* giving links a bit of margin */
+  margin: 0 30px;
 }
 
 a:hover {
@@ -65,31 +72,9 @@ body {
 }
 
 main.container {
-  flex: 1 0 auto; /* this ensures that the main content expands */
+  flex: 1 0 auto;
 }
 
 footer {
   flex-shrink: 0; /* this ensures that the footer does not shrink */
-}
-
-.rating {
-  font-size: 0;
-}
-
-.star {
-  display: inline-block;
-  margin: 10px;
-  width: 60px;
-  height: 60px;
-  background-image: url("/public/images/empty-star.png"); /* Replace with your star image */
-  background-size: cover;
-  cursor: pointer;
-}
-
-.star.full {
-  background-image: url("/public/images/full-star.png");
-}
-
-.star.half {
-  background-image: url("/public/images/half-star.png");
 }
