@@ -44,16 +44,16 @@ sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
 // Runs handlebars
-app.engine('handlebars', expbs({ defaultLayout: 'main' }));
-app.set('view engine', 'handlebars');
-// Handlebar routing
-app.get('/', (req, res) => {
-    res.render('index');
-});
-app.get('/modal', (req, res) => {
-  res.render('modal');
-});
-app.get('/ratings', (req, res) => {
-  res.render('ratings');
-});
+// app.engine('handlebars', expbs({ defaultLayout: 'main' }));
+// app.set('view engine', 'handlebars');
+// // Handlebar routing
+// app.get('/', (req, res) => {
+//     res.render('index');
+// });
+// app.get('/modal', (req, res) => {
+//   res.render('modal');
+// });
+// app.get('/ratings', (req, res) => {
+//   res.render('ratings');
+// });
 
