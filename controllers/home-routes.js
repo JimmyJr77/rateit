@@ -7,7 +7,16 @@ router.get('/', async (req, res) => {
     try {
  // res.sendFile(path.join(__dirname, '../res.render main handlebarsPage')); from views
  //placeholder---- change data below once views are ready
- res.render('main', { dataFromMainHandlebar });
+ res.render('index');
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
+
+router.get('/modal', async (req, res) => {
+    try {
+        res.render('modal');
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
