@@ -54,6 +54,7 @@ header {
   border: none;
   height: 35px;
   margin-left: -10px;
+}
 /* .btn-submit {
     background-color: #63b5fd;
     border: none;
@@ -147,11 +148,20 @@ footer {
   font-size: 1.5em;
 }
 
-.star-rating {
+/* .star-rating {
   font-size: 2em;
   color: #ffee90;
-}
+} */
 
+.star-rating {
+  display: inline-block;
+  margin: 5px;
+  width: 20px;
+  height: 20px;
+  /* background-image: url("/public/images/empty-star.png"); */
+  background-size: cover;
+  cursor: pointer;
+}
 /* COMMENT BOXES */
 
 .d-none {
