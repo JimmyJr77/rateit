@@ -19,6 +19,7 @@ Reviews.hasMany(ReviewCharacteristics, {
 
 ReviewCharacteristics.belongsTo(Reviews);
 ReviewCharacteristics.belongsTo(Characteristics);
+ReviewCharacteristics.belongsTo(Tools);
 
 Characteristics.hasMany(ReviewCharacteristics, {
   foreignKey: "characteristic_id",
@@ -33,6 +34,10 @@ Categories.hasMany(Tools, {
 });
 
 Tools.hasMany(Reviews, {
+  foreignKey: "tool_id",
+});
+
+Tools.hasMany(ReviewCharacteristics, {
   foreignKey: "tool_id",
 });
 
