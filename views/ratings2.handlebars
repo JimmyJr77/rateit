@@ -11,7 +11,7 @@
         </section>
 
     <!-- TOOL BOXES SECTION -->
-    {{#each this}} <!-- Loop through each tool in the array -->
+    {{#each Tools as |tool|}} <!-- Loop through each tool in the array -->
         <section id="tool-boxes">
             <div class="container-fluid mt-2 py-2 bg-light-blue" onclick="toggleDropdown(this)">
                 <div class="d-flex align-items-center ">
@@ -20,7 +20,7 @@
                             <div class="d-flex align-items-center">
                                 <button type="button" class="btn btn-rate" data-toggle="modal" data-target="#filterModal">rate</button>
                                 <div>
-                                    <h3 id="tool-name" class="tool-name font-weight-bold" style="color:white">{{name}}</h3>
+                                    <h3 id="tool-name" class="tool-name font-weight-bold" style="color:white">{{tool.name}}</h3>
                                 </div>
                             </div>
                             <div id="overall-rating-stars" class="star-rating ">
@@ -35,7 +35,8 @@
                     </div>
                 </div>
             </div>
-
+    {{/each}}
+    
             <!-- TOOL BOX DROP DOWN -->
         {{#each Characteristics}}
             <div class="comments-dropdown bg-grey p-3 d-none">

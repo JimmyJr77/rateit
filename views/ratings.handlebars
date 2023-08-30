@@ -1,3 +1,4 @@
+
     <!-- TOOL HEADER SECTION -->
     <section>
         <section>
@@ -11,7 +12,7 @@
                 </div>
             </div>
         </section>
-
+{{#each Tools as |tool|}}
     <!-- TOOL BOXES SECTION-->
         <section id="tool-boxes">
             <div class="container-fluid mt-2 py-2 bg-light-blue" onclick="toggleDropdown(this)">
@@ -20,9 +21,10 @@
                         <div class="d-flex justify-content-between align-items-center ">
                             <div class="d-flex align-items-center">
                                 <button type="button" class="btn btn-rate" data-toggle="modal" data-target="#filterModal">rate</button>
-                                <div><h3 id="tool-name" class="tool-name font-weight-bold" style="color:white">A Really Long Tool Name</h3></div>
+                                <div><h3 id="tool-name" class="tool-name font-weight-bold" style="color:white">{{tool.name}}</h3></div>
                             </div>
-                            <div id="overall-rating-stars" class="star-rating"></div>
+                            <div style="display:none" id="tool{{tool.id}}">{{tool.overal_rating}}<div>
+                            <div>{{{renderStars}}}</div>
                         </div>
                     </div>
                     <div class=" align-items-center mr-2" style="width:20%;">
@@ -32,37 +34,27 @@
                     </div>
                 </div>
             </div>
+{{/each}}
 
+{{#each Characteristics as |characteristic|}}
             <!-- TOOL BOX DROP DOWN -->
             <div class="comments-dropdown bg-grey p-3 d-none">
                 <div class="row justify-content-start ml-1">
                     <div class="col-4 align self start p-3 m-3>
-                        <span id="characteristicName">Characteristic name: </span>
+                        <span id="characteristicName">Characteristic name: {{characteristic.name}}</span>
                         <span id="characteristicRating">#</span></div>
-                    
+{{/each}}                    
 
+{{#each Reviews as |review|}}
                 </div>
                 <!-- Next Comment -->
                 <div class="bg-white rounded p-2 m-2 border-dark-grey">
                     <span class="likes-count">120</span>
-                    <span class="star-outline ml-2" onclick="toggleStar(this)" data-id="comment1">&#9734;</span>
-                    <span class="username ml-2 font-weight-bold" id="user-name">johndoe (52):</span>
-                    <span class="comment-text ml-2" id="comment-text">Great framework!</span>
+                    <span class="star-outline ml-2" onclick="toggleStar(this)" data-id="comment{{review.id}}}">&#9734;</span>
+                    <span class="username ml-2 font-weight-bold" id="user-name">{{review.name}}:</span>
+                    <span class="comment-text ml-2" id="comment-text">{{review.text}}</span>
                 </div>
-                <!-- Next Comment -->
-                <div class="bg-white rounded p-2 m-2 border-dark-grey">
-                    <span class="likes-count">120</span>
-                    <span class="star-outline ml-2" onclick="toggleStar(this)" data-id="comment1">&#9734;</span>
-                    <span class="username ml-2 font-weight-bold">johndoe (52):</span>
-                    <span class="comment-text ml-2">Great framework!</span>
-                </div>
-                <!-- Next Comment -->
-                <div class="bg-white rounded p-2 m-2 border-dark-grey">
-                    <span class="likes-count">120</span>
-                    <span class="star-outline ml-2" onclick="toggleStar(this)" data-id="comment1">&#9734;</span>
-                    <span class="username ml-2 font-weight-bold">johndoe (52):</span>
-                    <span class="comment-text ml-2">Great framework!</span>
-                </div>
+{{/each}}  
                 <!-- See More Comments Link -->
                 <div class="text-center">
                     <a href="#">See all reviews</a>
