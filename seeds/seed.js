@@ -49,7 +49,7 @@ async function init() {
     for (let r_id = 1; r_id <= reviews.length; r_id++) {
         for (let c_id = 1; c_id <= characteristics.length; c_id++) {
             // random chance to review a characteristic
-            if (randInt(2) < 2) continue;
+            // if (randInt(2) < 2) continue;
 
             reviewCharacteristics.push({
                 rating: randInt(5),

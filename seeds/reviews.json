@@ -1,82 +1,104 @@
 [
-    {
-      "rating": 5,
-      "text": "This framework is a true masterpiece! It revolutionized the way I design websites. The components are elegant and the documentation is crystal clear."
-    },
-    {
-      "rating": 4,
-      "text": "A solid framework that simplifies responsive design. The learning curve was manageable, and the grid system saved me hours of work."
-    },
-    {
-      "rating": 3,
-      "text": "Decent framework, but lacking in customization options. It's great for quick projects, but more advanced developers might find it limiting."
-    },
-    {
-      "rating": 2,
-      "text": "Disappointing experience. The styles clashed with my project's aesthetic, and the lack of support made troubleshooting a nightmare."
-    },
-    {
-      "rating": 4,
-      "text": "As a beginner, I appreciated the beginner-friendly documentation. However, the framework's lack of flexibility in terms of layout frustrated me."
-    },
-    {
-      "rating": 5,
-      "text": "This framework is a lifesaver for tight deadlines. The pre-designed elements cut down development time significantly. A must-have in my toolkit."
-    },
-    {
-      "rating": 3,
-      "text": "The framework's features are hit or miss. Some are incredibly useful, while others feel unnecessary and just add bloat."
-    },
-    {
-      "rating": 4,
-      "text": "The minimalist design approach is perfect for my taste. It's lightweight and efficient, but occasionally I wish it had a bit more built-in styling."
-    },
-    {
-      "rating": 1,
-      "text": "This framework was a disaster for me. The components didn't align well with my design goals, and the lack of updates is concerning."
-    },
-    {
-      "rating": 4,
-      "text": "A versatile framework that suits both beginners and experienced developers. The only drawback is the larger file size that impacts load times."
-    },
-    {
-      "rating": 2,
-      "text": "The initial learning curve was steep and the documentation lacked clarity. Once I got the hang of it, I appreciated the customization options."
-    },
-    {
-      "rating": 5,
-      "text": "I'm amazed by how well this framework integrates with other tools. The modularity and extensibility are superb."
-    },
-    {
-      "rating": 3,
-      "text": "The framework is stable and reliable, but the lack of innovation in terms of design and components is holding it back."
-    },
-    {
-      "rating": 4,
-      "text": "Excellent community support and regular updates. The framework has grown significantly and addresses many pain points of web development."
-    },
-    {
-      "rating": 1,
-      "text": "This framework feels outdated. It's not keeping up with modern design trends and the lack of responsiveness is a huge letdown."
-    },
-    {
-      "rating": 5,
-      "text": "The grid system's flexibility is a godsend. It adapts effortlessly to any design concept, making my projects truly unique."
-    },
-    {
-      "rating": 3,
-      "text": "This framework has some really great features, but it can be overwhelming to navigate due to the sheer number of options."
-    },
-    {
-      "rating": 4,
-      "text": "The theming capabilities allowed me to maintain brand consistency across multiple projects. However, the initial setup required some effort."
-    },
-    {
-      "rating": 2,
-      "text": "I struggled with compatibility issues on certain browsers. The framework's lack of cross-browser support was a significant drawback."
-    },
-    {
-      "rating": 5,
-      "text": "Simply fantastic! The modular structure enabled me to pick and choose what I needed without bogging down my projects."
-    }
-  ]  
+  { "text": "This framework is a game-changer! It made responsive design a breeze and boosted my productivity." },
+  { "text": "I struggled with the learning curve initially, but once I got the hang of it, the results were impressive." },
+  { "text": "The simplicity of this framework's syntax is what won me over. Clean and efficient code!" },
+  { "text": "I appreciate the extensive documentation. It made integrating this framework into my project a breeze." },
+  { "text": "The built-in components saved me so much time. My project looks sleek without much effort." },
+  { "text": "I love how customizable this framework is. It adapts perfectly to my design preferences." },
+  { "text": "Responsive design never came this easily before. The grid system is genius!" },
+  { "text": "The community support is outstanding. I always find solutions to my problems in the forums." },
+  { "text": "The minimalist approach of this framework aligns perfectly with my design philosophy." },
+  { "text": "I struggled to find good cross-browser support, but this framework solved that problem for me." },
+  { "text": "The theming options allowed me to create a consistent look across all my projects." },
+  { "text": "This framework helped me speed up my development process dramatically. Highly recommended!" },
+  { "text": "The CSS animations in this framework added a dynamic touch to my websites." },
+  { "text": "The component library is extensive, but I wish the documentation provided more real-world examples." },
+  { "text": "The responsive utilities made my project look great on every device, from mobile to desktop." },
+  { "text": "It took some time to get used to the unique syntax, but now I find it incredibly efficient." },
+  { "text": "I encountered some bugs during integration, but the frequent updates from the developers fixed them." },
+  { "text": "The performance optimizations in this framework really shine, even on heavy websites." },
+  { "text": "As a beginner, I found this framework's learning curve steep. More beginner-friendly resources would help." },
+  { "text": "The customization options are endless, but it can be overwhelming to choose the right ones." },
+  { "text": "The theming feature is great, but I had to spend extra time fine-tuning it for my project." },
+  { "text": "I was skeptical at first, but the ease of use and great results made me a believer." },
+  { "text": "I appreciate the focus on accessibility. This framework helps me create inclusive designs." },
+  { "text": "The modular architecture of this framework allows me to keep my project organized and efficient." },
+  { "text": "I struggled with browser compatibility issues. This framework needs more extensive testing." },
+  { "text": "The pre-designed components are a huge time-saver. My clients love the polished look." },
+  { "text": "The responsive breakpoints in this framework are well thought out and saved me hours of work." },
+  { "text": "I'm impressed by the performance optimization of this framework. My websites load lightning-fast." },
+  { "text": "The consistent updates keep this framework current and aligned with modern design trends." },
+  { "text": "I wish the framework had a larger community. It's sometimes hard to find solutions to specific problems." },
+  { "text": "The lack of customization was a bit frustrating, but the out-of-the-box styles suited my needs." },
+  { "text": "This framework's utility classes make it easy to style components without writing custom CSS." },
+  { "text": "The well-organized documentation made it simple to implement complex features in my project." },
+  { "text": "The theming capabilities are great, but I wish they included more predefined color schemes." },
+  { "text": "I've used many frameworks, and this one stands out for its clean, semantic code structure." },
+  { "text": "The learning curve was steep, but now I appreciate the advanced features this framework offers." },
+  { "text": "The grid system is flexible and robust. It adapts effortlessly to different layout needs." },
+  { "text": "This framework made it possible for me to create pixel-perfect designs. The attention to detail is impressive." },
+  { "text": "I encountered a few quirks in the responsive behavior, but overall, it's a solid framework." },
+  { "text": "The component library is comprehensive, but I had to dig deep to find the right one for my project." },
+  { "text": "This framework helped me achieve consistent styling across all sections of my website." },
+  { "text": "The modularity of this framework is fantastic. I can include only what I need, reducing bloat." },
+  { "text": "I appreciate the clean and well-structured codebase of this framework. It's a developer's dream." },
+  { "text": "I was amazed by the innovative animations this framework offers. It brought life to my design." },
+  { "text": "The lack of responsive design support was a major drawback for my project." },
+  { "text": "This framework's community is active and helpful. I always find solutions to my issues." },
+  { "text": "The utility classes sped up my styling process, but sometimes I wished for more customization." },
+  { "text": "This framework's theming capabilities enabled me to create a consistent brand identity." },
+  { "text": "The CSS transitions in this framework added a touch of elegance to my website interactions." },
+  { "text": "I appreciate how lightweight this framework is. My projects load quickly without compromising style." },
+  { "text": "The learning resources are abundant, making it easier to tackle the learning curve." },
+  { "text": "I encountered a few bugs, but the support team was quick to respond and provided solutions." },
+  { "text": "The modular nature of this framework makes it easy to organize and maintain my codebase." },
+  { "text": "I love the responsive utilities in this framework. My layouts look great on every screen size." },
+  { "text": "The customization options are vast, but sometimes I found it hard to choose the right one." },
+  { "text": "I found the component library a bit overwhelming, but the search feature helped me locate what I needed." },
+  { "text": "This framework's animations and transitions added a dynamic touch to my user experience." },
+  { "text": "The CSS variables in this framework allowed me to create dynamic themes with ease." },
+  { "text": "I struggled with integrating this framework due to some compatibility issues with my project." },
+  { "text": "The consistent updates and bug fixes showed that the developers are dedicated to improving the framework." },
+  { "text": "This framework's responsive grid system helped me create well-structured layouts." },
+  { "text": "The lack of documentation for some advanced features left me searching for answers." },
+  { "text": "The design philosophy of this framework aligns perfectly with my project's aesthetics." },
+  { "text": "I encountered a few performance issues with this framework on larger websites." },
+  { "text": "The simplicity of this framework's syntax saved me a lot of time in development." },
+  { "text": "I appreciate the modularity of this framework. It allowed me to keep my project organized." },
+  { "text": "I found this framework's learning curve manageable, and the results were worth it." },
+  { "text": "The CSS mixins provided by this framework made it easy to implement consistent styles." },
+  { "text": "I struggled with the lack of pre-styled components in this framework. More options would be great." },
+  { "text": "This framework's theming capabilities made it effortless to match my project's branding." },
+  { "text": "I appreciate the minimalistic approach of this framework. It's clean and unobtrusive." },
+  { "text": "The responsive breakpoints in this framework were spot on. My designs look great on all devices." },
+  { "text": "I encountered some browser-specific issues with this framework. Cross-browser compatibility needs improvement." },
+  { "text": "The community around this framework is supportive and quick to help with issues." },
+  { "text": "The grid system in this framework made designing layouts a breeze. It's flexible and powerful." },
+  { "text": "I had to invest time in learning this framework, but now it's an integral part of my workflow." },
+  { "text": "The theming options in this framework allowed me to create unique designs for each project." },
+  { "text": "I struggled with the setup process of this framework, but the final result was worth it." },
+  { "text": "The extensive collection of utility classes sped up my development process significantly." },
+  { "text": "I wish this framework had more built-in animations. Customizing them took more effort than expected." },
+  { "text": "This framework's performance optimizations made my website feel snappy and responsive." },
+  { "text": "The modular structure of this framework made it easy to organize my styles and components." },
+  { "text": "I'm impressed by the detailed documentation that comes with this framework." },
+  { "text": "I struggled with the syntax of this framework initially, but now I find it efficient." },
+  { "text": "The consistent updates and new features kept this framework relevant and up to date." },
+  { "text": "I appreciate the responsive classes that adapt my designs to various screen sizes." },
+  { "text": "I wish the documentation for this framework covered more advanced use cases." },
+  { "text": "The community support for this framework is unparalleled. I always find solutions to my problems." },
+  { "text": "The clean and modular code structure of this framework made it easy to manage larger projects." },
+  { "text": "I was pleasantly surprised by the performance gains after integrating this framework." },
+  { "text": "The utility classes in this framework are a lifesaver for rapid styling." },
+  { "text": "I wish this framework had a better ecosystem of third-party plugins." },
+  { "text": "The learning curve for this framework was manageable, and the results exceeded my expectations." },
+  { "text": "I encountered some minor bugs, but the developers were quick to address them." },
+  { "text": "The extensive documentation helped me understand the nuances of this framework." },
+  { "text": "I found the syntax of this framework intuitive, and it helped me develop faster." },
+  { "text": "I struggled with the lack of responsive design support in this framework. It's not well-suited for mobile-first projects." },
+  { "text": "The community forums for this framework are a valuable resource for troubleshooting." },
+  { "text": "I was able to create intricate layouts with ease thanks to the powerful grid system in this framework." },
+  { "text": "I had to experiment with different settings to achieve the desired design in this framework." },
+  { "text": "The theming capabilities in this framework allowed me to create unique branding for my clients." },
+  { "text": "The performance optimizations in this framework exceeded my expectations. My websites load incredibly fast." }
+]
