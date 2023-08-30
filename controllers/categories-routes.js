@@ -1,8 +1,13 @@
 const router = require('express').Router();
 //const path = require('path');
 const { Users, Categories, Tools, Characteristics, Reviews, ReviewCharacteristics } = require('../models');
-const sequelize = require('../config/connection.JS');
 const sequelize = require('../config/connection.js');
+const { roundToTenth } = require('../utils/helpers.js');
+const { Op } = require("sequelize");
+
+router.get('/', async (req, res) => {
+  res.redirect('/');
+});
 
 //route to get one category
 router.get('/:id', async (req, res) => {
@@ -32,7 +37,7 @@ router.get('/:id', async (req, res) => {
         },
       ],
       group: 'id',
-      raw: true          
+      raw: true
     });
 
     const reviews = await Tools.findAll({
@@ -54,27 +59,76 @@ router.get('/:id', async (req, res) => {
       }
     });
 
-    const reviewCharacteristics = await Tools.findAll({
+    const characteristics = (await Categories.findByPk(categoryId, {
       include: {
-        model: ReviewCharacteristics,
-        attributes: [
-          'tool_id',
-          'characteristic_id',
-          // [sequelize.fn('AVG', sequelize.col('rating')), 'avg']
-        ],
-        include: {
-          model: Characteristics,
-          attributes: {
-            exclude: ['categoryId']
+        model: Characteristics,
+        attributes: {
+          exclude: ['categoryId', 'category_id']
+        }
+      }
+    })).characteristics;
+
+    const reviewCharacteristics = await ReviewCharacteristics.findAll({
+      where: {
+        tool_id: tools.map(tool => tool.id),
+      },
+      attributes: [
+        'characteristic_id',
+        'tool_id',
+        [sequelize.fn('AVG', sequelize.col('rating')), 'rating']
+      ],
+      group: ['characteristic_id', 'tool_id'],
+      raw: true
+    });
+
+    console.log(reviewCharacteristics);
+
+    // const reviewCharacteristics = await Tools.findAll({
+    //   attributes: [],
+    //   include: {
+    //     model: ReviewCharacteristics,
+    //     attributes: [
+    //       'tool_id',
+    //       // 'characteristic_id',
+    //       [sequelize.fn('AVG', sequelize.col('rating')), 'avg']
+    //     ],
+    //     // include: {
+    //     //   model: Characteristics,
+    //     //   attributes: {
+    //     //     exclude: ['categoryId']
+    //     //   }
+    //     // },
+    //     required: true,
+    //     order: ['reviewCharacteristics.characteristic_id', 'ASC'],
+    //     group: ['reviewCharacteristics.characteristic_id','tools.id',]
+    //   },
+    //   raw: true,
+    //   group: 'tools.id'
+    // })
+
+    tools.forEach(tool => {
+      const overallRating = tool['reviewCharacteristics.overall_rating'];
+      delete tool['reviewCharacteristics.overall_rating'];
+      tool.overall_rating = overallRating;
+      tool.reviews = reviews.find(r => r.id === tool.id).reviews;
+
+      tool.characteristics = characteristics.map(char => {
+        const reviewChar = reviewCharacteristics.find(rc => rc.tool_id === tool.id && rc.characteristic_id === char.id);
+        if (!reviewChar) {
+          return {
+            id: char.id,
+            name: char.name,
+            rating: null
           }
         }
-        // group: ['tools.id', 'reviewCharacteristics.characteristic_id']
-      },
-      raw: true,
-      // group: 'id'
-    })
 
-    tools.forEach(tool => tool.reviews = reviews.find(r => r.id === tool.id).reviews);
+        return {
+          id: char.id,
+          name: char.name,
+          rating: reviewChar.rating
+        }
+      })
+    });
 
     if (!tools) {
       return res.status(404).json({ message: 'Category not found' });
