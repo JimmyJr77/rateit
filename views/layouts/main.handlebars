@@ -14,7 +14,9 @@
 <body>
     <!-- HEADER -->
     <header class="bg-yellow py-2 d-flex justify-content-between align-items-center">
-        <img src="/images/rateit.png" alt="RateIt Logo" class="logo-img">
+        <a href="/">
+            <img src="/images/rateit.png" alt="RateIt Logo" class="logo-img">
+        </a>
         <div>
             <button class="btn btn-signup" data-toggle="modal" data-target="#signupModal">Sign Up</button>
             <button class="btn btn-login mr-5" data-toggle="modal" data-target="#loginModal">Login</button>
@@ -26,12 +28,12 @@
     <main class="container mt-5">
 
         <!-- DROPDOWN FOR CATEGORY -->
-        <div class="d-flex justify-content-center mb-4">
+        {{!-- <div class="d-flex justify-content-center mb-4">
             <select class="custom-select w-auto" id="categoryDropdown">
                 <option selected>Choose the programming focus area you want to evaluate</option>
                 <option value="1">CSS Frameworks</option>
             </select>
-        </div>
+        </div> --}}
 
         <body>
           {{{ body }}}

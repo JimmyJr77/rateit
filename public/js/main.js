@@ -6,12 +6,25 @@
 
   function toggleDropdown(element) {
     const dropdown = element.nextElementSibling;
-    if (dropdown.style.display === "none" || dropdown.classList.contains("d-none")) {
-        dropdown.style.display = "block";
-        dropdown.classList.remove("d-none");
-    } else {
-        dropdown.style.display = "none";
+
+    if (dropdown.matches('.char-grid')) {
+        if (dropdown.style.display === "none" || dropdown.classList.contains("d-none")) {
+            dropdown.style.display = "grid";
+            dropdown.classList.remove("d-none");
+        } else {
+            dropdown.style.display = "none";
+        }
     }
+
+    else {
+        if (dropdown.style.display === "none" || dropdown.classList.contains("d-none")) {
+            dropdown.style.display = "block";
+            dropdown.classList.remove("d-none");
+        } else {
+            dropdown.style.display = "none";
+        }
+    }
+
 }
   
 

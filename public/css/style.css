@@ -74,9 +74,10 @@ header {
 a.text-grey:hover {
   text-decoration: none;
   color: #6c757d;
+  cursor: default;
 }
 
-a {
+main a {
   color: #007bff;
   cursor: pointer;
   margin: 0 30px;
@@ -98,6 +99,12 @@ body {
 
 main.container {
   flex: 1 0 auto;
+}
+
+.char-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 1rem;
 }
 
 /* FOOTER INFORMATION */
@@ -147,9 +154,9 @@ footer {
 
 /* BLUE TOOL BOX CONTENT */
 
-#tool-boxes h3 {
+.tool-container h3 {
   color: white;
-  margin-top: 10px;
+  margin: 0;
 }
 
 .rating {
