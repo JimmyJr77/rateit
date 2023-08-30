@@ -37,6 +37,7 @@ router.get('/:id', async (req, res) => {
         },
       ],
       group: 'id',
+      order: [[sequelize.fn('AVG', sequelize.col('reviewCharacteristics.rating')), 'DESC']],
       raw: true
     });
 
