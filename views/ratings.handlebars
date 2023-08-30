@@ -40,19 +40,20 @@
             <!-- TOOL BOX DROP DOWN -->
             <div class="comments-dropdown bg-grey p-3 d-none">
                 <div class="row justify-content-start ml-1">
-                    <div class="col-4 align self start p-3 m-3>
+                    <div class="col-4 align self start p-3 m-3">
                         <span id="characteristicName">Characteristic name: {{characteristic.name}}</span>
                         <span id="characteristicRating">#</span></div>
 {{/each}}                    
 
 {{#each Reviews as |review|}}
+    {{review}}
                 </div>
                 <!-- Next Comment -->
                 <div class="bg-white rounded p-2 m-2 border-dark-grey">
                     <span class="likes-count">120</span>
-                    <span class="star-outline ml-2" onclick="toggleStar(this)" data-id="comment{{review.id}}}">&#9734;</span>
+                    {{!-- <span class="star-outline ml-2" onclick="toggleStar(this)" data-id="comment{{review.id}}}">&#9734;</span>
                     <span class="username ml-2 font-weight-bold" id="user-name">{{review.name}}:</span>
-                    <span class="comment-text ml-2" id="comment-text">{{review.text}}</span>
+                    <span class="comment-text ml-2" id="comment-text">{{review.text}}</span> --}}
                 </div>
 {{/each}}  
                 <!-- See More Comments Link -->
