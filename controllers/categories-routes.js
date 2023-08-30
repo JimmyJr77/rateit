@@ -40,7 +40,7 @@ router.get('/:id', async (req, res) => {
       raw: true
     });
 
-    const reviews = await Tools.findAll({
+    const reviews = (await Tools.findAll({
       attributes: {
         exclude: ['categoryId']
       },
@@ -57,7 +57,7 @@ router.get('/:id', async (req, res) => {
           }
         }
       }
-    });
+    })).map(r => r.get({ plain: true }));
 
     const characteristics = (await Categories.findByPk(categoryId, {
       include: {
@@ -80,8 +80,6 @@ router.get('/:id', async (req, res) => {
       group: ['characteristic_id', 'tool_id'],
       raw: true
     });
-
-    console.log(reviewCharacteristics);
 
     // const reviewCharacteristics = await Tools.findAll({
     //   attributes: [],
@@ -127,7 +125,10 @@ router.get('/:id', async (req, res) => {
           name: char.name,
           rating: reviewChar.rating
         }
-      })
+      });
+
+      tool.top_reviews = tool.reviews.slice(0, 3);
+      tool.top_characteristics = tool.characteristics.slice(0, 3);
     });
 
     if (!tools) {
@@ -136,7 +137,7 @@ router.get('/:id', async (req, res) => {
   
     // const categoryData = category.get({ plain: true });
     // res.json(tools);
-    res.render('ratings', { tools, loggedIn: req.session.loggedIn });
+    res.render('ratings2', { tools, loggedIn: req.session.loggedIn });
   } 
   catch (err) {
     console.error(err);
