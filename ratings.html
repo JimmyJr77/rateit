@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Developer Tool Ratings</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link href="/public/css/style.css" rel="stylesheet">
@@ -60,15 +61,7 @@
                                 <button type="button" class="btn btn-rate" data-toggle="modal" data-target="#filterModal">rate</button>
                                 <div class="tool-box-outline"><h3 id="tool-name" class="tool-name font-weight-bold" style="color:white">Tool Name Tool Name Tool Name</h3></div>
                             </div>
-                            
-                            <div class="rating" id="rating">
-                                <div id="overall-rating-stars" class="bi bi-star star-rating tool-box-outline" data-average-rating="1.7"></div>
-                                <div id="overall-rating-stars" class="bi bi-star star-rating tool-box-outline" data-average-rating="2.7"></div>
-                                <div id="overall-rating-stars" class="bi bi-star star-rating tool-box-outline" data-average-rating="3.7"></div>
-                                <div id="overall-rating-stars" class="bi bi-star star-rating tool-box-outline" data-average-rating="4.7"></div>
-                                <div id="overall-rating-stars" class="bi bi-star star-rating tool-box-outline" data-average-rating="5"></div>
-
-                            </div>
+                            <div id="overall-rating-stars" class="star-rating tool-box-outline"></div>
                         </div>
                     </div>
                     <div class="tool-box-outline d-flex justify-content-between align-items-center" style="width:30%;">
@@ -135,10 +128,12 @@
         </div>
     </footer>
 
+
+
+<!-- JAVASCRIPT  -->
     <script>
 
 // JAVASCRIPT TO HIDE/SHOW DROPDOWN FOR TOOLBOX CONTENT
-
         function toggleDropdown(element) {
             const dropdown = element.nextElementSibling;
             if (dropdown.style.display === "none" || dropdown.classList.contains("d-none")) {
@@ -166,9 +161,67 @@
                 localStorage.setItem(commentId, 'empty');
             }
         }
-        
+
     </script>
-    
+
+    <script>
+// JAVASCRIPT TO DYNAMICALLY RENDER THE STARS
+        var value = 3.9; // change this value to be generated dynamically
+
+        function renderStars(value) {
+            const maxStars = 5; // sets the max number of stars
+
+            let fullStars = Math.floor(value); // identifies the whole number and sets that as the number of full stars
+            let decimalPart = value - fullStars; // subtracts the number of whole stars from the full value to get the decimal
+            
+            let extraStar = 0;  // initialize counter for extra stars. this will be either 0 or 1
+            let halfStar = 0;  // initialize counter for half stars. this will be either 0 or 1
+            
+            // establish the count of extra half stars and whole stars
+            if (decimalPart >= 0.0 && decimalPart <= 0.3) { 
+                extraStar = 0; // no extra stars for 0.0 to 0.3
+            } else if (decimalPart > 0.3 && decimalPart < 0.7) {
+                halfStar = 1; // half star for .4 to .6
+            } else if (decimalPart >= 0.7 && decimalPart <= 0.9) {
+                extraStar = 1; // extra star for .7 to .9
+            }
+            
+            let totalFullStars = fullStars + extraStar;  // full star count from math.floor + extra full star count
+            let emptyStars = maxStars - totalFullStars - halfStar; // subtracts total stars (full + half) from 5 to get empty star count
+            
+            // Establishes a string of stars using the bi (bootstrap icons) bi-star- variants
+            let starsHTML = "";
+
+            // Renders a full star for each full star in the fullStar count (math.floor)
+            for(let i = 0; i < fullStars; i++) {
+                starsHTML += `<span class="bi bi-star-fill yellow"></span>`;
+            }
+
+            // Render an extra full-star if applicable (0.7 to 0.9)
+            for(let i = 0; i < extraStar; i++) {
+                starsHTML += `<span class="bi bi-star-fill yellow"></span>`; // fills in with css class "yellow"
+            }
+
+            // renders half-star if applicable (0.4 to 0.6)
+            for(let i = 0; i < halfStar; i++) {
+                starsHTML += `<span class="bi bi-star-half yellow"></span>`; // fills in half with css class "yellow"
+            }
+
+            // renders empty stars (0.1 to 0.3)
+            for(let i = 0; i < emptyStars; i++) {
+                starsHTML += `<span class="bi bi-star yellow"></span>`; // outline only with css class "yellow"
+            }
+
+            // renders the culmination of all the above stars in order in which they were calculated top to bottom (above)
+            document.getElementById('overall-rating-stars').innerHTML = starsHTML;
+        }
+
+        // Call function to render stars
+        renderStars(value);
+
+      </script>
+
+
     <!-- JQUERY & BOOTSTRAP JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>

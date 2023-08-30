@@ -2,6 +2,12 @@ const generateRandomUsername = require('random-username-gen');
 const generatePassword = require('random-password');
 const allUsers = [];
 
+function newGenerateRandUsername(options) {
+    const name = generateRandomUsername('', options).slice(1);
+    if (name.endsWith('-')) return name.slice(name.length - 1);
+    return name;
+}
+
 function randomUsername() {
     const options = {
         length: 13,
@@ -10,14 +16,13 @@ function randomUsername() {
         ensureUnique: true,
     };
 
-    let newUser = generateRandomUsername('', options).slice(1);
+    let newUser = newGenerateRandUsername(options);
     while (allUsers.includes(newUser)) {
         newUser = generateRandomUsername('', options).slice(1);
     }
 
     allUsers.push(newUser);
-    
-    return generateRandomUsername('', options).slice(1);
+    return newUser;
 }
 
 function randomPassword() {
