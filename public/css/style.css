@@ -1,16 +1,15 @@
 /* COLORS */
 
-
 .bg-light-blue {
-    background-color: #63b5fd; 
+  background-color: #63b5fd;
 }
 
 .bg-grey {
-    background-color: #e4e4e4;
+  background-color: #e4e4e4;
 }
 
 .border-dark-grey {
-    border:#757c83 solid 1px;
+  border: #757c83 solid 1px;
 }
 
 body {
@@ -21,7 +20,7 @@ body {
   background-color: #ffee90; /* dull yellow */
 }
 
-yellow {
+.yellow {
   color: #ffee90;
 }
 
@@ -124,7 +123,6 @@ main.container {
 
 /* FOOTER INFORMATION */
 
-
 footer {
   flex-shrink: 0;
 }
@@ -132,9 +130,6 @@ footer {
 .footer-left {
   margin-left: 30px;
 }
-
-
-
 
 /* BACKGROUND COLORS */
 
@@ -155,7 +150,6 @@ footer {
 }
 
 /* BLUE TEXT BOX HEADERS */
-
 
 .headers {
   font-weight: bold;
@@ -179,17 +173,15 @@ footer {
   font-size: 1.5em;
 }
 
-/* .star-rating {
-  font-size: 2em;
-  color: #ffee90;
-} */
+.stars-container {
+  display: inline;
+}
 
 .star-rating {
-  display: inline-block;
+  font-size: 30px;
   margin: 5px;
   width: 20px;
   height: 20px;
-  /* background-image: url("/public/images/empty-star.png"); */
   background-size: cover;
   cursor: pointer;
 }
