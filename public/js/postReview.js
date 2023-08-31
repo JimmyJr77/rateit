@@ -20,7 +20,9 @@ function init() {
 async function handleRate(event) {
     event.preventDefault();
 
-    console.log('submit');
+    const text = $('#review-text').val();
+
+    const tool_id = $('#rate-tool-form').attr('data-tool-id');
 
     const characteristics = [];
 
@@ -28,16 +30,15 @@ async function handleRate(event) {
         if ($(charValue).val()) {
             characteristics.push({
                 rating: $(charValue).val(),
-                characteristic_id: $(charValue).attr('data-char-id')
+                characteristic_id: $(charValue).attr('data-char-id'),
+                tool_id: tool_id
             });
         }
     }
 
     if (characteristics.length === 0) return;
 
-    const text = $('#review-text').val();
-
-    const tool_id = $('#rate-tool-form').attr('data-tool-id');
+   
     
     const response = await fetch('/api/reviews', {
         method: 'POST',
