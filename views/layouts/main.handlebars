@@ -120,7 +120,47 @@
     <script src="/js/ratings.js"></script>
     <script src="/js/modal.js"></script>
 
+            <script>
+$( document ).ready(function() {
+  console.log("Hidden");
+   // $(".reviews-container").hide();
+    $(".top-reviews-container").show();
+});
 
+
+
+    $('.reviews-container').hide();
+    $('.seeAllReviewsBtn').text("See all Reviews");
+    const changeText = document.querySelector("#change-text");
+    $('.seeAllReviewsBtn').on('click', function(event) {
+      const toolId = $(this).attr('data-tool-id');
+      //getting the value
+     // console.log($(`.seeAllReviewsBtn[data-tool-id=${toolId}]`).text());
+      if( $(`.seeAllReviewsBtn[data-tool-id=${toolId}]`).text() === "See all Reviews"){
+       // console.log("IF Statement")
+        //setting the value
+        $(`.seeAllReviewsBtn[data-tool-id=${toolId}]`).text("Close Reviews");
+    }
+    else {
+
+     // console.log("Else Statement")
+      //setting the value
+        $(`.seeAllReviewsBtn[data-tool-id=${toolId}]`).text("See all Reviews");
+    }
+        
+        $(`.reviews-container[data-tool-id=${toolId}]`).toggle();
+        $(`.top-reviews-container[data-tool-id=${toolId}]`).toggle();
+    });
+
+
+
+
+        
+
+
+
+
+</script>
 
 </body>
 </html>

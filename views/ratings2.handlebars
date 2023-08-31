@@ -24,7 +24,7 @@
                         </div>
                     </div>
 
-                    <div>
+                    <div class="stars-container">
                         {{{renderStars tool.overall_rating}}}
                         <small>({{roundToTenth tool.overall_rating}} out of 5)</small>
                     </div>
@@ -50,21 +50,29 @@
 
             <!-- TOOL BOX DROP DOWN -->
             
-            <div class="top-reviews-container">
+            <div class="top-reviews-container" data-tool-id="{{tool.id}}">
                 {{#each tool.top_reviews}}
                     {{> toolReview this}}
                 {{/each}}
             </div>
             
-            <div class="reviews-container">
+            <div class="reviews-container" data-tool-id="{{tool.id}}">
                 {{#each tool.reviews}}
                     {{> toolReview this}}
                 {{/each}}
             </div>
                     <!-- See More Comments Link -->
             <div class="text-center">
-                <a href="#">See all reviews</a>
+                <button class="seeAllReviewsBtn" data-tool-id="{{tool.id}}">See all reviews</button>
             </div>
+
+
+
+<style>
+.review.hidden {
+    display: none;
+}
+</style>
         </section>
     {{/each}}
     </section>   

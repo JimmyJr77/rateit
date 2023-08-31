@@ -1,16 +1,15 @@
 /* COLORS */
 
-
 .bg-light-blue {
-    background-color: #63b5fd; 
+  background-color: #63b5fd;
 }
 
 .bg-grey {
-    background-color: #e4e4e4;
+  background-color: #e4e4e4;
 }
 
 .border-dark-grey {
-    border:#757c83 solid 1px;
+  border: #757c83 solid 1px;
 }
 
 body {
@@ -21,7 +20,7 @@ body {
   background-color: #ffee90; /* dull yellow */
 }
 
-yellow {
+.yellow {
   color: #ffee90;
 }
 
@@ -30,6 +29,10 @@ header {
 }
 
 .logo-img {
+  max-height: 100px;
+  width: auto;
+  margin-left: 30px;
+  margin-top: 24px;
   max-height: 100px;
   width: auto;
   margin-left: 30px;
@@ -44,6 +47,11 @@ header {
 
 .btn-login {
   background-color: #63b5fd;
+  color: white;
+  font-weight: bold;
+  border: none;
+  margin-right: 30px;
+  background-color: #63b5fd; /* light blue */
   color: white;
   font-weight: bold;
   border: none;
@@ -64,6 +72,12 @@ header {
   border: none;
   height: 35px;
   margin-left: -10px;
+}
+/* .btn-submit {
+    background-color: #63b5fd;
+    border: none;
+    height: 35px;
+    margin-left: -10px;
 }
 
 /* OTHER */
@@ -109,7 +123,6 @@ main.container {
 
 /* FOOTER INFORMATION */
 
-
 footer {
   flex-shrink: 0;
 }
@@ -117,9 +130,6 @@ footer {
 .footer-left {
   margin-left: 30px;
 }
-
-
-
 
 /* BACKGROUND COLORS */
 
@@ -140,7 +150,6 @@ footer {
 }
 
 /* BLUE TEXT BOX HEADERS */
-
 
 .headers {
   font-weight: bold;
@@ -164,11 +173,18 @@ footer {
   font-size: 1.5em;
 }
 
-.star-rating {
-  font-size: 2em;
-  color: #ffee90;
+.stars-container {
+  display: inline;
 }
 
+.star-rating {
+  font-size: 30px;
+  margin: 5px;
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+  cursor: pointer;
+}
 /* COMMENT BOXES */
 
 .d-none {
