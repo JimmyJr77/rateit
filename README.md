@@ -79,11 +79,26 @@ The URL will work with most browsers. The preferred Browser is Google Chrome and
 
 
 ## Resources🛠️
-### Web API and Frameworks Used
+### Basic languages
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
-- [jQuery](https://code.jquery.com/jquery-3.7.0.min.js)
-- [Materialize](https://materializecss.com/)
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+### Front End
+- [Bootstrap](https://getbootstrap.com)
+- [JQuery UI](https://jqueryui.com)
+
+### Back End Concepts
+- [Node](https://nodejs.org/en)
+- [MVC](https://developer.mozilla.org/en-US/docs/Glossary/MVC)
+- [Sequelize](https://sequelize.org)
+- [Handlebars](https://handlebarsjs.com)
+
+### New NPM package
+- [random-password](https://www.npmjs.com/package/random-password)
+- [random-username-gen](https://www.npmjs.com/package/random-username-gen)
+
+--------------------------------------------------------------------------------------------------------------------------------------------
 ### Images used
 
 - [Original Reddit Logo svg](./public/images/reddit-logo-new.svg)
