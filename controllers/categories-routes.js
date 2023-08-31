@@ -138,7 +138,7 @@ router.get('/:id', async (req, res) => {
   
     // const categoryData = category.get({ plain: true });
     // res.json(tools);
-    res.render('ratings2', { tools, characteristics, loggedIn: req.session.loggedIn });
+    res.render('ratings', { tools, characteristics, loggedIn: req.session.loggedIn });
   } 
   catch (err) {
     console.error(err);
