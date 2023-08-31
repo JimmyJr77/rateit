@@ -4,36 +4,47 @@
     <!-- TOOL CONTAINER -->
     {{#each tools as |tool|}} <!-- Loop through each tool in the array -->
         <section class="tool-container">
-            <div class="container-fluid mt-2 p-2 bg-light-blue tool-dropdown-toggle" onclick="toggleDropdown(this)">
+            <div class="container-fluid mt-2 p-3 bg-light-blue tool-dropdown-toggle" onclick="toggleDropdown(this)">
                 {{!-- Tool Card Heading Container --}}
-                <div class="row align-items-center">
-                    {{!-- Tool name & rate button --}}
-                    <div class="d-flex align-items-center col-sm-3 col-md-6">
-                        {{#if ../loggedIn}}
-                            <button type="button" class="btn btn-rate" data-toggle="modal" data-target="#rateModal" data-tool-name="{{tool.name}}" data-tool-id="{{tool.id}}">rate</button>
-                        {{else}}
-                            <button type="button" class="btn btn-rate" data-toggle="modal" data-target="#signupModal">rate</button>
-                        {{/if}}
-                        <div style="overflow:hidden; white-space: nowrap; text-overflow: ellipsis;">
-                            <h3 id="tool-name" class="tool-name font-weight-bold" style="color:white">{{tool.name}}</h3>
+                <div class="row justify-content-between mx-0">
+                    <div class="row align-items-center col-10">
+                        {{!-- Tool name & rate button --}}
+                        <div class="d-flex align-items-center" style="margin-right: 20px;">
+                            <div style="overflow:hidden; white-space: nowrap; text-overflow: ellipsis;">
+                                <h3 id="tool-name" class="tool-name font-weight-bold" style="color:white">{{tool.name}}</h3>
+                            </div>
+                        </div>
+
+                        <div class="stars-container">
+                            {{{renderStars tool.overall_rating}}}
+                            <small style="opacity: 50%;">({{roundToTenth tool.overall_rating}} out of 5)</small>
                         </div>
                     </div>
 
-                    <div class="stars-container">
-                        {{{renderStars tool.overall_rating}}}
-                        <small>({{roundToTenth tool.overall_rating}} out of 5)</small>
+                    <div>
+                        <button type="button" class="btn btn-rate" data-toggle="modal"
+                        {{#if ../loggedIn}}
+                            data-target="#rateModal" data-tool-name="{{tool.name}}" data-tool-id="{{tool.id}}"
+                        {{else}}
+                            data-toggle="modal" data-target="#signupModal"
+                        {{/if}}
+                        ><i class="bi bi-star me-2"></i>&nbsp;&nbsp;Rate</button>
                     </div>
-
                 </div>
 
-                <div class="d-flex align-items-center justify-content-around">
+                <div class="d-flex align-items-center justify-content-around mt-2">
                     {{#each tool.top_characteristics}}
                         {{#if this.rating}}
-                        <h5 class="top-char" class="text-right " style="color:#ffee90";>{{this.name}}: {{roundToTenth this.rating}}</h5>
+                        <h5 class="top-char" class="text-right " style="color:white";>{{this.name}}: {{roundToTenth this.rating}}</h5>
                         {{else}}
-                        <div class="top-char" class="text-right " style="color:#ffee90";>{{this.name}}: —</div>
+                        <div class="top-char" class="text-right " style="color:white";>{{this.name}}: —</div>
                         {{/if}}
                     {{/each}}
+                </div>
+
+                <div class="d-flex flex-row align-items-center justify-content-center">
+                    <small style="color: white; font-weight: 500;">See More&nbsp;</small>
+                    <i class="bi bi-caret-down-fill" style="color: white;"></i>
                 </div>
             </div>
     
