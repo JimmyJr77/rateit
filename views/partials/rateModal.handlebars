@@ -1,0 +1,56 @@
+<div class="modal fade" id="rateModal" tabindex="-1" role="dialog" aria-labelledby="rateModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-yellow">
+                <h5 class="modal-title" id="rateModalLabel">Rate <span id="rate-tool-name">tool_name</span></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="text-center">
+                    {{!-- <h3>Choose Desired Characteristics to Review</h3> --}}
+                    <p>Check any of the following characteristics to rate them.</p>
+                </div>
+
+                <form id="rate-tool-form" data-tool-id="">
+                    {{!-- Charactertics --}}
+                    <div class="rate-chars d-flex flex-column align-items-center justify-content-center">
+                        {{#each this as |char|}}
+                            <div id="rate-char-container-{{char.id}}" data-char-id="{{char.id}}" class="rate-charactertic">
+                                <div id="filter-strip" class="d-flex align-items-center justify-content-center">
+                                    <div style="width:300px" class="text-right" >
+                                        <span class="font-weight-bold">{{char.name}}</span>
+                                    </div>
+                                    <div>
+                                        <div class="custom-control custom-checkbox ml-2">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck{{char.id}}">
+                                            <label class="custom-control-label" for="customCheck{{char.id}}"></label>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div id="char-slider-{{char.id}}" class=".char-slider" data-char-id="{{char.id}}"></div>
+                                    </div>
+                                    <div>
+                                        <div class="d-flex align-items-center col-.5">
+                                            <input type="text" class="char-value" id="characteristic-{{char.id}}" data-char-id="{{char.id}}" readonly style="border:0; width:30px; color:blue; font-weight:bold;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {{/each}}
+                    </div>
+
+                    <div class="text-box-container d-flex flex-column align-items-center justify-content-center mt-3">
+                        <p>Enter your comments below <small class="fst-italic">(optional)</small>:</p>
+                        <textarea name="Review" id="review-text" cols="40" rows="10" style="resize: none"></textarea>
+
+                        <input type="submit" class="btn btn-primary mt-2" value="Submit Review">
+                    </div>
+
+                </form>
+                
+            </div>
+        </div>
+    </div>
+</div>
