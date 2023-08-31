@@ -36,7 +36,7 @@ async function init() {
     const categories = await seedData('categories.json', Categories);
     const tools = await seedData('tools.json', Tools);
     const characteristics = await seedData('characteristics.json', Characteristics);
-    
+    return;
     // seed reviews with random user_id and tool_id
     const reviews = await seedData('reviews.json', Reviews, (review) => {
         review.user_id = randInt(users.length);

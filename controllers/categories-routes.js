@@ -138,7 +138,6 @@ router.get('/:id', async (req, res) => {
   
     // const categoryData = category.get({ plain: true });
     // res.json(tools);
-    console.log('------------------ ' + req.session.loggedIn + ' ------------------')
     res.render('ratings2', { tools, characteristics, loggedIn: req.session.loggedIn });
   } 
   catch (err) {
