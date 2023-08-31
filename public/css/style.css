@@ -191,6 +191,13 @@ footer {
   display: none;
 }
 
+.seeAllReviewsBtn,
+.seeAllReviewsBtn:focus {
+  border-style: none !important;
+  outline: none;
+  margin-bottom: 20px;
+}
+
 /* RESIZING OPTIONS */
 
 @media (max-width: 768px) {

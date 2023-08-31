@@ -11,9 +11,9 @@ module.exports = {
     let extraStar = 0; // This will be either 0 or 1
     let halfStar = 0; // This will be either 0 or 1
 
-    if (decimalPart <= 0.3) {
+    if (decimalPart < 0.25) {
       extraStar = 0;
-    } else if (decimalPart <= 0.7) {
+    } else if (decimalPart <= 0.75) {
       halfStar = 1;
     } else {
       extraStar = 1;
