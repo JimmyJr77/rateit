@@ -60,6 +60,8 @@ router.get('/:id', async (req, res) => {
       }
     })).map(r => r.get({ plain: true }));
 
+    const category = await Categories.findByPk(categoryId, { raw: true });
+
     const characteristics = (await Categories.findByPk(categoryId, {
       include: {
         model: Characteristics,
@@ -138,7 +140,7 @@ router.get('/:id', async (req, res) => {
   
     // const categoryData = category.get({ plain: true });
     // res.json(tools);
-    res.render('ratings2', { tools, characteristics, loggedIn: req.session.loggedIn });
+    res.render('ratings', { tools, characteristics, category, loggedIn: req.session.loggedIn });
   } 
   catch (err) {
     console.error(err);

@@ -1,69 +1,87 @@
+<h1 class="text-center mb-5">{{category.name}}</h1>
 
-    <!-- TOOL HEADER SECTION -->
-    <section>
-        <section>
-            <div class="d-flex col container-fluid my-2">
-                <div class="d-flex align-items-end">
-                        <div class="d-flex d-flex align-end">
-                            <button type="button" class="btn btn-filter" data-toggle="modal" data-target="#filterModal">Filter</button>
-                        </div>
-                </div>
-                <div class="d-flex col text-right"> 
-                </div>
-            </div>
-        </section>
-{{#each Tools as |tool|}}
-    <!-- TOOL BOXES SECTION-->
-        <section id="tool-boxes">
-            <div class="container-fluid mt-2 py-2 bg-light-blue" onclick="toggleDropdown(this)">
-                <div class="d-flex align-items-center ">
-                    <div style="width:80%;">
-                        <div class="d-flex justify-content-between align-items-center ">
-                            <div class="d-flex align-items-center">
-                                <button type="button" class="btn btn-rate" data-toggle="modal" data-target="#filterModal">rate</button>
-                                <div><h3 id="tool-name" class="tool-name font-weight-bold" style="color:white">{{tool.name}}</h3></div>
+<secion class="ratings-section">
+    <!-- TOOL CONTAINER -->
+    {{#each tools as |tool|}} <!-- Loop through each tool in the array -->
+        <section class="tool-container">
+            <div class="container-fluid mt-2 p-3 bg-light-blue tool-dropdown-toggle" onclick="toggleDropdown(this)">
+                {{!-- Tool Card Heading Container --}}
+                <div class="row justify-content-between mx-0">
+                    <div class="row align-items-center col-10">
+                        {{!-- Tool name & rate button --}}
+                        <div class="d-flex align-items-center" style="margin-right: 20px;">
+                            <div style="overflow:hidden; white-space: nowrap; text-overflow: ellipsis;">
+                                <h3 id="tool-name" class="tool-name font-weight-bold" style="color:white">{{tool.name}}</h3>
                             </div>
-                            <div style="display:none" id="tool{{tool.id}}">{{tool.overal_rating}}<div>
-                            <div>{{{renderStars}}}</div>
+                        </div>
+
+                        <div class="stars-container">
+                            {{{renderStars tool.overall_rating}}}
+                            <small style="opacity: 50%;">({{roundToTenth tool.overall_rating}} out of 5)</small>
                         </div>
                     </div>
-                    <div class=" align-items-center mr-2" style="width:20%;">
-                        <div id="topChar1" class="text-right " style="color:#ffee90";>characteristic 1</div>
-                        <div id="topChar2" class="text-right" style="color: #ffee90";>characteristic 2</div>
-                        <div id="topChar3" class="text-right" style="color: #ffee90";>characteristic 3</div>
+
+                    <div>
+                        <button type="button" class="btn btn-rate" data-toggle="modal"
+                        {{#if ../loggedIn}}
+                            data-target="#rateModal" data-tool-name="{{tool.name}}" data-tool-id="{{tool.id}}"
+                        {{else}}
+                            data-toggle="modal" data-target="#signupModal"
+                        {{/if}}
+                        ><i class="bi bi-star me-2"></i>&nbsp;&nbsp;Rate</button>
                     </div>
                 </div>
-            </div>
-{{/each}}
 
-{{#each Characteristics as |characteristic|}}
+                <div class="d-flex align-items-center justify-content-around mt-2">
+                    {{#each tool.top_characteristics}}
+                        {{#if this.rating}}
+                        <h5 class="top-char" class="text-right " style="color:white";>{{this.name}}: {{roundToTenth this.rating}}</h5>
+                        {{else}}
+                        <div class="top-char" class="text-right " style="color:white";>{{this.name}}: —</div>
+                        {{/if}}
+                    {{/each}}
+                </div>
+
+                <div class="d-flex flex-row align-items-center justify-content-center">
+                    <small style="color: white; font-weight: 500;">See More&nbsp;</small>
+                    <i class="bi bi-caret-down-fill" style="color: white;"></i>
+                </div>
+            </div>
+    
+            <div class="comments-dropdown bg-grey p-3 d-none char-grid">
+                {{#each tool.characteristics}}
+                    {{> toolCharacteristic this}}
+                {{/each}}
+            </div>
+
             <!-- TOOL BOX DROP DOWN -->
-            <div class="comments-dropdown bg-grey p-3 d-none">
-                <div class="row justify-content-start ml-1">
-                    <div class="col-4 align self start p-3 m-3">
-                        <span id="characteristicName">Characteristic name: {{characteristic.name}}</span>
-                        <span id="characteristicRating">#</span></div>
-{{/each}}                    
-
-{{#each Reviews as |review|}}
-    {{review}}
-                </div>
-                <!-- Next Comment -->
-                <div class="bg-white rounded p-2 m-2 border-dark-grey">
-                    <span class="likes-count">120</span>
-                    {{!-- <span class="star-outline ml-2" onclick="toggleStar(this)" data-id="comment{{review.id}}}">&#9734;</span>
-                    <span class="username ml-2 font-weight-bold" id="user-name">{{review.name}}:</span>
-                    <span class="comment-text ml-2" id="comment-text">{{review.text}}</span> --}}
-                </div>
-{{/each}}  
-                <!-- See More Comments Link -->
-                <div class="text-center">
-                    <a href="#">See all reviews</a>
-                </div>
+            
+            <div class="top-reviews-container r-container" data-tool-id="{{tool.id}}">
+                {{#each tool.top_reviews}}
+                    {{> toolReview this}}
+                {{/each}}
             </div>
+            
+            <div class="reviews-container r-container" data-tool-id="{{tool.id}}">
+                {{#each tool.reviews}}
+                    {{> toolReview this}}
+                {{/each}}
+            </div>
+                    <!-- See More Comments Link -->
+            <div class="text-center">
+                <button class="seeAllReviewsBtn" data-tool-id="{{tool.id}}">See all reviews</button>
+            </div>
+
+
+
+{{!-- <style>
+.review.hidden {
+    display: none;
+}
+</style> --}}
         </section>
-    </section>   
+    {{/each}}
 
+</section>
 
-  
-   
+{{> rateModal characteristics}}

@@ -4,6 +4,10 @@
   background-color: #63b5fd;
 }
 
+.light-blue {
+  color: #63b5fd;
+}
+
 .bg-grey {
   background-color: #e4e4e4;
 }
@@ -67,11 +71,15 @@ header {
 }
 
 .btn-rate {
-  color: #ffee90;
+  background-color: #ffee90;
   font-weight: bold;
   border: none;
-  height: 35px;
-  margin-left: -10px;
+  /* height: 35px; */
+  /* margin-left: -10px; */
+}
+
+.btn-rate:hover {
+  background-color: #edd75a;
 }
 /* .btn-submit {
     background-color: #63b5fd;
@@ -168,6 +176,10 @@ footer {
   margin: 0;
 }
 
+.tool-dropdown-toggle:hover {
+  cursor: pointer;
+}
+
 .rating {
   font-weight: bold;
   font-size: 1.5em;
@@ -186,6 +198,16 @@ footer {
   cursor: pointer;
 }
 /* COMMENT BOXES */
+.comments-dropdown {
+  padding: 1rem;
+}
+
+.r-container {
+  background-color: #e4e4e4;
+  position: relative;
+  bottom: 10px;
+  padding: 1rem;
+}
 
 .d-none {
   display: none;
@@ -209,5 +231,11 @@ footer {
   .star-rating {
     font-size: 1.5em;
     color: #ffee90;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .char-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
