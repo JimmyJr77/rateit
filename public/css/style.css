@@ -168,6 +168,10 @@ footer {
   margin: 0;
 }
 
+.tool-dropdown-toggle:hover {
+  cursor: pointer;
+}
+
 .rating {
   font-weight: bold;
   font-size: 1.5em;
@@ -186,6 +190,16 @@ footer {
   cursor: pointer;
 }
 /* COMMENT BOXES */
+.comments-dropdown {
+  padding: 1rem;
+}
+
+.r-container {
+  background-color: #e4e4e4;
+  position: relative;
+  bottom: 10px;
+  padding: 1rem;
+}
 
 .d-none {
   display: none;
