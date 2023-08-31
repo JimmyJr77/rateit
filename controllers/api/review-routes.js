@@ -23,7 +23,7 @@ router.post("/", async (req, res) => {
       char.review_id = reviewData.id;
       return char;
     });
-    const newReviewChars = await ReviewCharacteristics.bulkCreate(reviewChars);
+    const newReviewChars = await ReviewCharacteristics.bulkCreate(reviewChars, { individualHooks: true, returning: true });
 
     console.log(newReviewChars)
     res.status(200).json(newReviewChars);

@@ -127,6 +127,12 @@
     <script src="/js/ratings.js"></script>
     <script src="/js/modal.js"></script>
     <script src="/js/seeReviews.js"></script>
+
+    {{#if loggedIn}}
+    <script src="/js/logout.js"></script>
     <script src="/js/postReview.js"></script>
+    {{else}}
+    <script src="/js/login.js"></script>
+    {{/if}}
 </body>
 </html>
