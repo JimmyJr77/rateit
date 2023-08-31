@@ -1,16 +1,5 @@
-    <!-- TOOL HEADER SECTION -->
-    <secion>
-        {{!-- <section>
-            <div class="container-fluid my-2">
-                <div class="d-flex align-items-end">
-                        <div class="d-flex d-flex align-end">
-                            <button type="button" class="btn btn-filter" data-toggle="modal" data-target="#filterModal">Filter</button>
-                        </div>
-                </div>
-            </div>
-        </section> --}}
-
-    <!-- TOOL BOXES SECTION -->
+<secion class="ratings-section">
+    <!-- TOOL CONTAINER -->
     {{#each tools as |tool|}} <!-- Loop through each tool in the array -->
         <section class="tool-container">
             <div class="container-fluid mt-2 p-2 bg-light-blue" onclick="toggleDropdown(this)">
@@ -18,7 +7,11 @@
                 <div class="row align-items-center">
                     {{!-- Tool name & rate button --}}
                     <div class="d-flex align-items-center col-sm-3 col-md-6">
-                        <button type="button" class="btn btn-rate" data-toggle="modal" data-target="#filterModal">rate</button>
+                        {{#if ../loggedIn}}
+                            <button type="button" class="btn btn-rate" data-toggle="modal" data-target="#rateModal" data-tool-name="{{tool.name}}" data-tool-id="{{tool.id}}">rate</button>
+                        {{else}}
+                            <button type="button" class="btn btn-rate" data-toggle="modal" data-target="#signupModal">rate</button>
+                        {{/if}}
                         <div style="overflow:hidden; white-space: nowrap; text-overflow: ellipsis;">
                             <h3 id="tool-name" class="tool-name font-weight-bold" style="color:white">{{tool.name}}</h3>
                         </div>
@@ -50,21 +43,24 @@
 
             <!-- TOOL BOX DROP DOWN -->
             
-            <div class="top-reviews-container">
+            <div data-tool-id="{{tool.id}}" class="top-reviews-container">
                 {{#each tool.top_reviews}}
                     {{> toolReview this}}
                 {{/each}}
             </div>
-            
-            <div class="reviews-container">
+
+            <div data-tool-id="{{tool.id}}" class="reviews-container">
                 {{#each tool.reviews}}
                     {{> toolReview this}}
                 {{/each}}
             </div>
                     <!-- See More Comments Link -->
             <div class="text-center">
-                <a href="#">See all reviews</a>
+                <a class="see-reviews-btn" href="#" data-tool-id="{{tool.id}}">See all reviews</a>
             </div>
         </section>
     {{/each}}
-    </section>   
+
+</section>
+
+{{> rateModal characteristics}}

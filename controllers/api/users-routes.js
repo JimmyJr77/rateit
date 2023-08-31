@@ -94,7 +94,7 @@ router.post('/signup', async (req, res) => {
 
         const dataName = error.path;
         const dataNameCap = error.path.charAt(0).toUpperCase() + error.path.slice(1).toLowerCase();
-        const validate = User.getAttributes()[dataName].validate;
+        const validate = Users.getAttributes()[dataName].validate;
 
         if (error.validatorName === 'len') {
             res.status(400).json({ message: `${dataNameCap} must be at least ${validate.len[0]} characters long!` });

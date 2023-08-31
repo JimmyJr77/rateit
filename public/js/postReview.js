@@ -1,35 +1,62 @@
 // handles login and signup for clients
 
 function init() {
-    $('.error-message').hide();
+    $('.btn-rate').on('click', function(event) {
+        event.stopImmediatePropagation();
+        if ($(this).attr('data-target') === '#rateModal') {
+            $('#rateModal').modal('show');
+            $('#rate-tool-name').text($(this).attr('data-tool-name'));
+            $('#rate-tool-form').attr('data-tool-id', $(this).attr('data-tool-id'));
+        }
 
-    $('#login-form').on('submit', handleLogin);
-    $('#signup-form').on('submit', handleSignup);
+        else {
+            $('#signupModal').modal('show');
+        }
+    });
+
+    $('#rate-tool-form').on('submit', handleRate);
 }
 
-async function handleLogin(event) {
+async function handleRate(event) {
     event.preventDefault();
 
-    const username = $('#login-username-input').val();
-    const password = $('#login-password-input').val();
+    console.log('submit');
 
+    const characteristics = [];
+
+    for (const charValue of $('.char-value')) {
+        if ($(charValue).val()) {
+            characteristics.push({
+                rating: $(charValue).val(),
+                characteristic_id: $(charValue).attr('data-char-id')
+            });
+        }
+    }
+
+    if (characteristics.length === 0) return;
+
+    const text = $('#review-text').val();
+
+    const tool_id = $('#rate-tool-form').attr('data-tool-id');
+    
     const response = await fetch('/api/reviews', {
         method: 'POST',
         headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            name: username,
-            password: password
+            text, characteristics, tool_id
         }),
         
     });
     if (response.ok) {
         // const { userId } = await response.json();
-        location.assign('/');
+        location.reload();
         return;
     }
 
     const { message } = await response.json();
     $('#login-form .error-message').text(message).show();
 }
+
+$(init());

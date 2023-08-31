@@ -3,25 +3,19 @@ const { Reviews, ReviewCharacteristics } = require("../../models");
 
 router.post("/", async (req, res) => {
   try {
-    const { rating, text, characteristics, tool_id } = req.body;
-    console.log(
-      "rating is: " +
-        rating +
-        " text is " +
-        text +
-        " characteristics are " +
-        characteristics
-    );
-    if (!rating) {
-      res.status(400).json({ message: "No rating provided!" });
+    console.log(req.body);
+
+    const { text, characteristics, tool_id } = req.body;
+
+   
+    if (!req.session.userId) {
+      res.status(401).json({ message: "User not logged in!" });
       return;
     }
 
     const reviewData = await Reviews.create({
-      rating,
       text,
       tool_id,
-      //IN INSOMNIA, THE LINE BELOW WILL FAIL BECAUSE OF USERID NOT BEING MADE? OR SOMETHING
       user_id: req.session.userId,
     });
 
@@ -31,6 +25,7 @@ router.post("/", async (req, res) => {
     });
     const newReviewChars = await ReviewCharacteristics.bulkCreate(reviewChars);
 
+    console.log(newReviewChars)
     res.status(200).json(newReviewChars);
   } catch (err) {
     console.log(err);

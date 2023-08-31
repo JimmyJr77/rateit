@@ -65,9 +65,9 @@ router.get('/:id', async (req, res) => {
         model: Characteristics,
         attributes: {
           exclude: ['categoryId', 'category_id']
-        }
-      }
-    })).characteristics;
+        },
+      },
+    })).characteristics.map(char => char.get({ plain: true }));
 
     const reviewCharacteristics = await ReviewCharacteristics.findAll({
       where: {
@@ -109,7 +109,7 @@ router.get('/:id', async (req, res) => {
       const overallRating = tool['reviewCharacteristics.overall_rating'];
       delete tool['reviewCharacteristics.overall_rating'];
       tool.overall_rating = overallRating;
-      tool.reviews = reviews.find(r => r.id === tool.id).reviews;
+      tool.reviews = reviews.find(r => r.id === tool.id).reviews.filter(r => r.text.length > 0);
 
       tool.characteristics = characteristics.map(char => {
         const reviewChar = reviewCharacteristics.find(rc => rc.tool_id === tool.id && rc.characteristic_id === char.id);
@@ -138,7 +138,8 @@ router.get('/:id', async (req, res) => {
   
     // const categoryData = category.get({ plain: true });
     // res.json(tools);
-    res.render('ratings2', { tools, loggedIn: req.session.loggedIn });
+    console.log('------------------ ' + req.session.loggedIn + ' ------------------')
+    res.render('ratings2', { tools, characteristics, loggedIn: req.session.loggedIn });
   } 
   catch (err) {
     console.error(err);
